@@ -9,20 +9,18 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 
 ## Features
 
-### Plugin compatibility tested for:
-* 
+### Plugin setup:
+* Install database
+* Fill with example row
+* register 3 options 
 
+### Plugin removal:
+* Drop database
+* unregister 3 options
 
 ### Wordpress compatibility tested voor version:
-* 
-
-
-### SEO tested 
-* 
-
-
-### Custom functions (complementary to HTML5BLANK)(functions.php)
-* Enqueue Scripts functions setup
+* wordpress 4.1
+* wordpress 4.0
 
 ### changelog
-* 0.0.1 16-11-2014 init/ initial commit
+* 0.1 22-12-2014 init/ initial commit 'Base install / view / uninstall'
