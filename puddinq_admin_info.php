@@ -58,19 +58,19 @@ function puddinq_info_menu() {
 }
 
 define('PAIDIR', plugin_dir_path(__FILE__));
+    require_once(PAIDIR . 'admin/pai-functions.php');
     require_once(PAIDIR . 'admin/pai-page.php');
     require_once(PAIDIR . 'admin/pai-install.php');
-    require_once(PAIDIR . 'admin/pai-functions.php');
     require_once(PAIDIR . 'admin/pai-bewerk.php');
     require_once(PAIDIR . 'admin/pai-maak.php');
 
 
 /**
  * HOOK
- *  Activation 
+ *  Activation admin/pai-install.php
  * - make table on plugin activation (puddinq_admin_info_install())
  * - fill in first contact on plugin (activation puddinq_admin_info_install_data())
- * Deactivation
+ * Deactivation  admin/pai-install.php
  * - drop table and all information if pugin is uninstalled (puddinq_admin_info_uninstall())
  *      + remove settings from options
  */

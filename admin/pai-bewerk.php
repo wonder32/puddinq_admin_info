@@ -6,6 +6,10 @@
  */
 
 function puddinq_admin_info_bewerk () {
+    
+    // die if not manager
+    pai_cheating();
+    
 global $wpdb;
 $id = $_GET["id"];
 $name=$_POST["name"];

@@ -7,11 +7,9 @@
 
 function puddinq_admin_info_options () {
 
-    // die if not welcome
-    if ( !current_user_can( 'manage_options' ) )  {
-            wp_die( __( 'Cheatin&#8217; uh?' ) );
-    }
-
+    // die if not manager
+    pai_cheating();
+    
     // global settings form
 ?>
 
@@ -22,8 +20,9 @@ function puddinq_admin_info_options () {
 $page_title = 'Puddinq admin info';
 printf( __( 'Welcome to WordPress&nbsp;%s' ), $page_title );
 ?></h2>
+    
 
- <form method="post" action="options.php">
+<form method="post" action="options.php">
   <?php settings_fields( 'puddinq-info' ); ?>
   <?php //do_settings( 'puddinq-info' ); ?>
     <table class="form-table">
@@ -52,6 +51,8 @@ printf( __( 'Welcome to WordPress&nbsp;%s' ), $page_title );
 <?php
     // 
 ?>
+    <a class="button" href="<?php echo admin_url('admin.php?page=puddinq_admin_info_nieuw'); ?>">Nieuw contact aanmaken</a>
+ 
     <?php puddinq_admin_info_view_all()?>
 </div>
 <?php

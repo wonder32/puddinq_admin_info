@@ -10,8 +10,10 @@
     /*
      * TABLE
      */
+    // die if not manager
 
 function puddinq_admin_info_install(){
+        pai_cheating();
         global $wpdb;
         global $pai_db_version; 
         
