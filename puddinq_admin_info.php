@@ -1,7 +1,7 @@
 <?php
 /**
- *  Puddinq Admin Info CSS
- *  version 0.1
+ *  Puddinq Admin Info
+ *  version 0.2
  * 
  */
 /*
@@ -9,7 +9,7 @@ Plugin Name: Puddinq Admin Info
 Plugin URI: http://wordpress.org/plugins/puddinq-admin/
 Description: This plugin privides an extra page in the admin area with information
 Author: wonder32
-Version: 0.1
+Version: 0.2
 Author URI: https://puddinq.mobi/
 */
 

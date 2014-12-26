@@ -9,6 +9,15 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 
 ## Features
 
+### Contacts Admin view
+# View list of contacts
+# Create a contact
+# Read (list contacts)
+# Update a contact
+# Delete a contact
+
+
+
 ### Plugin setup:
 * Install database
 * Fill with example row

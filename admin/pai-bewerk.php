@@ -1,7 +1,7 @@
 <?php
 /**
  *  Puddinq Admin Info update field
- *  version 0.1
+ *  version 0.2
  * 
  */
 

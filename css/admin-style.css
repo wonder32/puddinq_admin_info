@@ -1,14 +1,14 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
+/**
+ * Puddinq Admin Info admin css
+ * version 0.2
+ * 
+ */
 /* 
     Created on : 25-dec-2014, 15:55:54
     Author     : Huis
 */
 
-.widefat {width: auto;}
+.widefat {width: 400px;}
 
 [name~="pai_text"] {
     height: 100px;

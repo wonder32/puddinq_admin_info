@@ -1,7 +1,7 @@
 <?php
 /**
- * @package Puddinq Admin Info Functions
- * @version 0.1
+ * Puddinq Admin Info Functions
+ * version 0.2
  * 
  */
 
