@@ -14,14 +14,14 @@ function puddinq_admin_info_nieuw () {
     global $wpdb;    
     $table  = $wpdb->prefix . "pai";
     $time   = current_time( 'mysql' );
-    $fname   = $_POST['fname'];
-    $lname   = $_POST['lname'];
-    $pai_text= $_POST['pai_text'];
-    $pai_url = $_POST['pai_url'];
+    (isset($_POST["fname"]))? $fname = $_POST["fname"]: $fname = '';
+    (isset($_POST["lname"]))? $lname = $_POST["lname"]: $lname = '';
+    (isset($_POST["pai_text"]))? $pai_text = $_POST["pai_text"]: $pai_text = '';
+    (isset($_POST["pai_url"]))? $pai_url = $_POST["pai_url"]: $pai_url = '';
     
     if (isset($_POST['insert'])) {
         $wpdb->insert(
-                'wp_pai',
+                $table,
                 array(
                     'time' => $time,
                     'fname' => $fname,
@@ -30,14 +30,14 @@ function puddinq_admin_info_nieuw () {
                     'url' => $pai_url),
                 array('%s', '%s', '%s', '%s', '%s')
                 );
-        $message .= "toegevoegd";
+        $message = "toegevoegd";
 
     }
 
 ?>
 
 <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/puddinq-admin-info/admin-style.css" rel="stylesheet" />
-<?php         $wpdb->insert_id; ?>
+<?php $wpdb->insert_id; ?>
 <div class="wrap">
     <h2>Nieuw contact</h2>
     
@@ -46,7 +46,7 @@ function puddinq_admin_info_nieuw () {
     <?php endif;?>
 
     <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
-        <p>Three capital letters for the ID</p>
+        <p>Geen http://</p>
         <table class='wp-list-table widefat fixed'>
         <tr><th>Voornaam</th><td><input type="text" name="fname" value="<?php echo $fname;?>"/></td></tr>
         <tr><th>Achternaam</th><td><input type="text" name="lname" value="<?php echo $lname;?>"/></td></tr>

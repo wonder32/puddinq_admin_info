@@ -30,7 +30,7 @@ function puddinq_admin_info_view_all() {
         echo '<td>' . $contact->lname . '</td>';
         echo '<td>' . $contact->text . '</td>';
         echo "<td><a href='" . $contact->url . "'>weblink</a></td>";
-        echo "<td><a href='".admin_url('admin.php?page=sinetiks_schools_update&id='.$contact->id)."'>Update</a></td>";
+        echo "<td><a href='".admin_url('admin.php?page=puddinq_admin_info_bewerk&id='.$contact->id)."'>Update</a></td>";
         echo '</tr>';
     }
     echo '</table>';    
