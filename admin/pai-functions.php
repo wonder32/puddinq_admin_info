@@ -23,14 +23,20 @@ function puddinq_admin_info_view_all() {
     }
     // loop true the results
     echo "<table class='wp-list-table widefat fixed'>";
-    echo '<tr><th>Voornaam</th><th>Achternaam</th><th>Tekst</th><th>URL</th><th>Bewerk</th></tr>';
+    echo '<tr><th>Voornaam</th><th>Achternaam</th><th>Tekst</th><th>URL</th><th>Bewerk</th><th>Verwijder</th></tr>';
     foreach ( $results as $contact ) {
         echo '<tr>';
         echo '<td>' . $contact->fname . '</td>';
         echo '<td>' . $contact->lname . '</td>';
         echo '<td>' . $contact->text . '</td>';
         echo "<td><a href='" . $contact->url . "'>weblink</a></td>";
-        echo "<td><a href='".admin_url('admin.php?page=puddinq_admin_info_bewerk&id='.$contact->id)."'>Update</a></td>";
+        echo "<td><a href='" . admin_url('admin.php?page=puddinq_admin_info_bewerk&id='.$contact->id) . "'>Update</a></td>";
+        echo "<td><form action='" . admin_url('admin.php?page=puddinq_admin_info_bewerk&id='.$contact->id) . "' method='post' >";
+        ?>
+        <input class='button' type='submit' value='verwijder' name='delete'
+        onclick="return confirm('&iquest;Weet je zeker dat je <?php echo $contact->lname; ?> wilt verwijderen ?')">
+        <?php
+        echo "</form></td>";
         echo '</tr>';
     }
     echo '</table>';    

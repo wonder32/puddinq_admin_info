@@ -1,6 +1,6 @@
 /**
  * Puddinq Admin Info admin css
- * version 0.2
+ * Version 0.0.1
  * 
  */
 /* 
@@ -8,8 +8,60 @@
     Author     : Huis
 */
 
-.widefat {width: 400px;}
+th, td {
+    vertical-align: text-top;
+}
 
-[name~="pai_text"] {
+.widefat {
+    min-width: 400px;
+    max-width: 800px;
+    width: 90%;
+}
+
+.pai input, .pai textarea {
+    border-radius: 3px;
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: #FFF;
+    width: 270px;
+    height: 25px;
+}
+
+ .pai input:required:valid, .pai textarea {
+    background: #1F2124;
+    background: -moz-linear-gradient(#1F2124, #27292C);
+    background: -ms-linear-gradient(#1F2124, #27292C);
+    background: -o-linear-gradient(#1F2124, #27292C);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#1F2124), to(#27292C));
+    background: -webkit-linear-gradient(#1F2124, #27292C);
+    background: linear-gradient(#1F2124, #27292C);
+    border: 1px solid #000;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+input:required:invalid, input:focus:invalid {
+  /* insert your own styles for invalid form input */
+    -moz-box-shadow: none;
+    background: #1F2124;
+    background: -moz-linear-gradient(#f85032, #e73827);
+    background: -ms-linear-gradient(#f85032, #e73827);
+    background: -o-linear-gradient(#f85032, #e73827);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f85032), to(#e73827));
+    background: -webkit-linear-gradient(#f85032, #e73827);
+    background: linear-gradient(#f85032, #e73827);
+    border: 2px solid #FF6600;
+}
+
+.pai textarea:focus, .pai input:focus {
+    box-shadow: inset 0 0 2px #000;
+    background: #494D54;
+    border-color: #51CBEE;
+    outline: none;
+}
+
+.pai textarea {
+    cols: "20"; 
+    rows: "10"; 
     height: 100px;
+    vertical-align: top;
+    overflow: auto;
 }

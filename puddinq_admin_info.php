@@ -84,14 +84,19 @@ define('PAIDIR', plugin_dir_path(__FILE__));
      *  Register script
      */
 
-// Register and enqueue all javascript (and css?) scripts
+// Register and enqueue all javascript scripts
 function puddinq_admin_info_scripts(){
-    wp_register_script('puddinq_admin_info_script',plugin_dir_url( __FILE__ ).'js/puddinq-admin-info.js');
-    wp_enqueue_script('puddinq_admin_info_script');
+        wp_register_script('puddinq_admin_info_script',plugin_dir_url( __FILE__ ) . 'js/puddinq-admin-info.js');
+        wp_enqueue_script('puddinq_admin_info_script');
 }
-    add_action('wp_enqueue_scripts','puddinq_admin_info_scripts');
+add_action('wp_enqueue_scripts','puddinq_admin_info_scripts');
 
-
+// Register and enqueue all stylesheets
+function load_puddinq_admin_info_style() {
+        wp_register_style( 'puddinq_admin_info_style', plugin_dir_url( __FILE__ ) . 'css/admin-style.css', false, '0.0.1' );
+        wp_enqueue_style( 'puddinq_admin_info_style' );
+}
+add_action( 'admin_enqueue_scripts', 'load_puddinq_admin_info_style' );
 
 /******************
  * Plugin action

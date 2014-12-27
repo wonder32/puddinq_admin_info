@@ -30,15 +30,16 @@ function puddinq_admin_info_nieuw () {
                     'url' => $pai_url),
                 array('%s', '%s', '%s', '%s', '%s')
                 );
-        $message = "toegevoegd";
-
+        $id = $wpdb->insert_id;
+        $message  = $fname . " " . $lname . " is toegevoegd ";
+        $message .= "<a href='" . admin_url('admin.php?page=puddinq_admin_info_bewerk&id='.$id) . "'>bewerk " . $fname . "</a>";
     }
 
 ?>
 
-<link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/puddinq-admin-info/admin-style.css" rel="stylesheet" />
+
 <?php $wpdb->insert_id; ?>
-<div class="wrap">
+<div class="wrap pai">
     <h2>Nieuw contact</h2>
     
     <?php if (isset($message)): ?>
@@ -48,10 +49,11 @@ function puddinq_admin_info_nieuw () {
     <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
         <p>Geen http://</p>
         <table class='wp-list-table widefat fixed'>
-        <tr><th>Voornaam</th><td><input type="text" name="fname" value="<?php echo $fname;?>"/></td></tr>
-        <tr><th>Achternaam</th><td><input type="text" name="lname" value="<?php echo $lname;?>"/></td></tr>
-        <tr><th>Beschrijving</th><td><input type="text" name="pai_text" value="<?php echo $pai_text;?>"/></td></tr>
-        <tr><th>Link</th><td><input type="text" name="pai_url" value="<?php echo $pai_url;?>"/></td></tr>
+        <tr><th>Voornaam</th><td><input type="text" name="fname" placeholder="Voornaam" required /></td></tr>
+        <tr><th>Achternaam</th><td><input type="text" name="lname" placeholder="Achternaam" required /></td></tr>
+        <tr><th>Beschrijving</th><td><textarea name="pai_text" placeholder="Wie is ut"></textarea></td></tr>
+        <tr><th>Email</th><td><input type="email" name="pai_email" placeholder="john@test.nl" required /></td></tr>
+        <tr><th>Link</th><td><input type="url" name="pai_url" placeholder="www.Weblink.nl" required pattern="https?://.+"/></td></tr>
         </table>
         <input type='submit' name="insert" value='Save' class='button'>
     </form>

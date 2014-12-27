@@ -41,22 +41,8 @@ if(isset($_POST['update'])){
 		'%s'	// value2
 	), 
 	array( '%s' ) 
-);
+        );
         
-        
-//	$wpdb->update(
-//		$table, //table
-//                array('time' => $time),
-//                array('fname' => $fname),
-//                array('lname' => $lname),
-//                array('url' => $pai_text),
-//                array('text' => $pai_url),
-//                array('%s'),    
-//                array('%s'),
-//                array('%s'),
-//                array('%s'),
-//                array('%s')
-//        );
 }
 
 //delete
@@ -77,7 +63,7 @@ else{//selecting value to update
 ?>
 <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/puddinq-admin-info/admin-style.css" rel="stylesheet" />
 
-<div class="wrap">
+<div class="wrap pai">
     <h2>Contact:</h2>
 
     <?php if(isset($_POST['delete'])){?>
@@ -92,11 +78,12 @@ else{//selecting value to update
         <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
             <p>Geen http://</p>
             <table class='wp-list-table widefat fixed'>
-            <tr><th>Laatste wijziging</th><td><input type="text" name="time" value="<?php echo $time;?>"/></td></tr>
-            <tr><th>Voornaam</th><td><input type="text" name="fname" value="<?php echo $fname;?>"/></td></tr>
-            <tr><th>Achternaam</th><td><input type="text" name="lname" value="<?php echo $lname;?>"/></td></tr>
-            <tr><th>Beschrijving</th><td><input type="text" name="pai_text" value="<?php echo $pai_text;?>"/></td></tr>
-            <tr><th>Link</th><td><input type="text" name="pai_url" value="<?php echo $pai_url;?>"/></td></tr>
+            <tr><th>Laatste wijziging</th><td><input type="text" name="time" value="<?php echo $time;?>" required/></td></tr>
+            <tr><th>Voornaam</th><td><input type="text" name="fname" value="<?php echo $fname;?>" required/></td></tr>
+            <tr><th>Achternaam</th><td><input type="text" name="lname" value="<?php echo $lname;?>" required/></td></tr>
+            <tr><th>Beschrijving</th><td><textarea name="pai_text"><?php echo $pai_text;?></textarea></td></tr>
+            <tr><th>Email</th><td><input type="email" name="pai_email" placeholder="john@test.nl" required /></td></tr>
+            <tr><th>Link</th><td><input type="url" name="pai_url" value="<?php echo $pai_url;?>" required pattern="https?://.+"/></td></tr>
             </table>
             <input type='submit' name="update" value='Opslaan' class='button'> &nbsp;&nbsp;
             <input type='submit' name="delete" value='Verwijder' class='button' 
