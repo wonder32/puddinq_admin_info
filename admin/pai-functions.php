@@ -8,6 +8,10 @@
 /**
  * Options admin page
  */
+
+class pai_view {
+    
+}
 function public_puddinq_admin_info_view() {
     // make database connection available for function
     global $wpdb;

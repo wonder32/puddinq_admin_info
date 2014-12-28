@@ -13,106 +13,89 @@ Version: 0.2
 Author URI: https://puddinq.mobi/
 */
 
-/**
- *  Add menu option for the page
- *                and      -sub pages
- */
+        define('PAIDIR', plugin_dir_path(__FILE__));
 
-add_action( 'admin_menu', 'puddinq_info_menu' );
+class pai_base {
 
-/**
- *      menu option for the page
- *                and      -sub pages
- */
+    
+    public function __construct() {
 
-function puddinq_info_menu() {
-    //view all en options
-    add_menu_page(
-            'Puddinq admin info', //Pagina titel 
-            'Pud Admin', //Menu titel
-            'manage_options', //Toegang
-            'admin_info', // menu slug
+        // Actions
+        
+        add_action( 'admin_menu', array($this, 'pai_menu_page' ));
+        add_action( 'admin_menu', array($this, 'pai_menu_sub_page_new' ));
+        add_action( 'admin_menu', array($this, 'pai_menu_sub_page_edit' ));
+        add_action( 'admin_enqueue_scripts', array($this, 'pai_load_admin_info_style' ));
+        add_action( 'admin_enqueue_scripts', array($this, 'pai_load_admin_info_script' ));
+        add_action( 'init', array($this, 'pai_load_files')); 
+        add_action( 'init', array($this, 'pai_register_installation_hooks'));
+        require_once(\PAIDIR . 'public/public.php');
+    }
+    
+    public function pai_load_files() {
+        // Load files
+        require_once(PAIDIR . 'admin/pai-functions.php');
+        require_once(PAIDIR . 'admin/pai-page.php');
+        require_once(PAIDIR . 'admin/pai-install.php');
+        require_once(PAIDIR . 'admin/pai-bewerk.php');
+        require_once(PAIDIR . 'admin/pai-maak.php');
+        
+        }
+        
+    public function pai_menu_page() {
+            // Add main admin page
+            add_menu_page(
+            'Puddinq admin info',       //Pagina titel 
+            'Pud Admin',                //Menu titel
+            'manage_options',           //Toegang
+            'admin_info',               // menu slug
             'puddinq_admin_info_options', //function
-            'dashicons-editor-italic', //icon
-            '14' //positie;
+            'dashicons-editor-italic',  //icon
+            '14'                        //positie;
             );
-    //add sub menu nieuw contact
-    add_submenu_page(
-            'admin_info', //onderdeel van bovenstaand admin info
-            'Nieuw contact', 
-            'Nieuw contact', 
-            'manage_options', //toegang
-            'puddinq_admin_info_nieuw', //slug 
-            'puddinq_admin_info_nieuw' //functiom
-            );
+    }
 
-    //add sub menu (verborgen) bewerk contact
-    add_submenu_page(
-            'null', //geen onderdeel -> daardoor verborgen
+    public function pai_menu_sub_page_new() {
+            // Add sub page new contact
+            add_submenu_page(
+            'admin_info',               //onderdeel van bovenstaand admin info
+            'Nieuw contact', 
+            'Nieuw contact', 
+            'manage_options',           //toegang
+            'puddinq_admin_info_nieuw', //slug 
+            'puddinq_admin_info_nieuw'  //functiom
+            );
+    }
+    
+    public function pai_menu_sub_page_edit() {
+            // Add hidden sub page edit contact   
+        add_submenu_page(
+            'null',                     //geen onderdeel -> daardoor verborgen
             'Bewerk contact', 
             'Bewerk contact', 
-            'manage_options', //toegang
-            'puddinq_admin_info_bewerk', //slug 
+            'manage_options',           //toegang
+            'puddinq_admin_info_bewerk',//slug 
             'puddinq_admin_info_bewerk' //functiom
             );
-}
-
-define('PAIDIR', plugin_dir_path(__FILE__));
-    require_once(PAIDIR . 'admin/pai-functions.php');
-    require_once(PAIDIR . 'admin/pai-page.php');
-    require_once(PAIDIR . 'admin/pai-install.php');
-    require_once(PAIDIR . 'admin/pai-bewerk.php');
-    require_once(PAIDIR . 'admin/pai-maak.php');
-    require_once(PAIDIR . 'public/public.php');
-
-
-/**
- * HOOK
- *  Activation admin/pai-install.php
- * - make table on plugin activation (puddinq_admin_info_install())
- * - fill in first contact on plugin (activation puddinq_admin_info_install_data())
- * Deactivation  admin/pai-install.php
- * - drop table and all information if pugin is uninstalled (puddinq_admin_info_uninstall())
- *      + remove settings from options
- */
-// Activation
-    register_activation_hook( __FILE__, 'puddinq_admin_info_install' );
-    register_activation_hook( __FILE__, 'puddinq_admin_info_install_data' );
-// Deactivation
-    register_deactivation_hook( __FILE__, 'puddinq_admin_info_uninstall' );
- 
-    /**
-     *  Register script
-     */
-
-// Register and enqueue all javascript scripts
-function puddinq_admin_info_scripts(){
-        wp_register_script('puddinq_admin_info_script',plugin_dir_url( __FILE__ ) . 'js/puddinq-admin-info.js');
-        wp_enqueue_script('puddinq_admin_info_script');
-}
-add_action('wp_enqueue_scripts','puddinq_admin_info_scripts');
-
-// Register and enqueue all stylesheets
-function load_puddinq_admin_info_style() {
+    }
+    
+    public function pai_register_installation_hooks() {
+        // Activation
+        register_activation_hook( __FILE__, 'puddinq_admin_info_install' );
+        register_activation_hook( __FILE__, 'puddinq_admin_info_install_data' );
+        // Deactivation
+        register_deactivation_hook( __FILE__, 'puddinq_admin_info_uninstall' );
+    }
+    
+    public function pai_load_admin_info_style() {
         wp_register_style( 'puddinq_admin_info_style', plugin_dir_url( __FILE__ ) . 'css/admin-style.css', false, '0.0.1' );
         wp_enqueue_style( 'puddinq_admin_info_style' );
-}
-add_action( 'admin_enqueue_scripts', 'load_puddinq_admin_info_style' );
-
-/******************
- * Plugin action
- ******************/
-    //HOOKS
-    add_action('init','puddinq_admin_info_init');
-/*****************/
-/*  FUNCTIONS
-******************/
-function puddinq_admin_info_init(){
-        //do work
-        //puddinq_admin_info_options();
-
-
+    }
+    
+    public function pai_load_admin_info_script() {
+        wp_register_script('puddinq_admin_info_script',plugin_dir_url( __FILE__ ) . 'js/puddinq-admin-info.js');
+        wp_enqueue_script('puddinq_admin_info_script');
+    }
 }
 
-
-
+$pai_base = new pai_base();
