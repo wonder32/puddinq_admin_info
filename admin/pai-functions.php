@@ -8,6 +8,30 @@
 /**
  * Options admin page
  */
+function public_puddinq_admin_info_view() {
+    // make database connection available for function
+    global $wpdb;
+    // get all rows from database
+    $query = " SELECT * FROM wp_pai";
+    // check if it worked
+    if($wpdb->query($query) === FALSE) {
+        $wpdb->show_errors();
+	$wpdb->print_error(); 
+    } else {
+        $results = $wpdb->get_results($query);
+    }
+    // loop true the results
+    echo "<table class='pai wp-list-table widefat fixed'>";
+    echo '<tr><th>Voornaam</th><th>Achternaam</th><th>Tekst</th><th>URL</th></tr>';
+    foreach ( $results as $contact ) {
+        echo '<tr>';
+        echo '<td>' . $contact->fname . '</td>';
+        echo '<td>' . $contact->lname . '</td>';
+        echo '<td>' . $contact->text . '</td>';
+        echo "<td><a href='" . $contact->url . "'>weblink</a></td></tr>";
+    }
+    echo '</table>';    
+}
 
 function puddinq_admin_info_view_all() {
     // make database connection available for function
@@ -44,9 +68,15 @@ function puddinq_admin_info_view_all() {
 
 function pai_cheating() {
     
-        // die if not welcome
+        // die if not manager
     if ( !current_user_can( 'manage_options' ) )  {
             wp_die( __( 'Cheatin&#8217; uh?' ) );
     }
     
+}
+
+function pai_logged_in() {
+    if ( !is_user_logged_in() ) {
+        wp_die('je moet ingelogd zijn om deze gegevens te bekijken');
+    }
 }

@@ -63,6 +63,7 @@ define('PAIDIR', plugin_dir_path(__FILE__));
     require_once(PAIDIR . 'admin/pai-install.php');
     require_once(PAIDIR . 'admin/pai-bewerk.php');
     require_once(PAIDIR . 'admin/pai-maak.php');
+    require_once(PAIDIR . 'public/public.php');
 
 
 /**
