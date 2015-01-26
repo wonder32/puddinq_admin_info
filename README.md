@@ -1,6 +1,10 @@
-# [puddinq admin info](http://rezz.nu)
+# [puddinq scooter](http://puddinq.mobi)
 
-[![Rezz](https://www.puddinq.mobi/wp-content/themes/puddinq/img/logo.gif)](http://www.puddinq.mobi)
+[![Puddinq](https://www.puddinq.mobi/wp-content/themes/puddinq/img/logo.gif)](http://www.puddinq.mobi)
+[![puddinq](https://www.puddinq.mobi/wip/logo_puddinq.gif)](https://www.puddinq.mobi)
+[![puddinq](https://www.puddinq.mobi/wip/wordpress.png)](https://www.puddinq.mobi)
+[![puddinq](https://www.puddinq.mobi/wip/logo_puddinq.gif)](https://www.puddinq.mobi)
+
 Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 
 * Project: [https://github.com/wonder32/puddinq_admin_info](https://github.com/wonder32/puddinq_admin_info)
@@ -10,16 +14,16 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 ## Features
 
 ### Contacts Admin view
-* View list of contacts
-* Create a contact
-* Read (list contacts)
-* Update a contact
-* Delete a contact
+* View list of scooter shops
+* Create a scootershop
+* Read (list shops)
+* Update a shop
+* Delete a shop
 
-### Public contacts view
+### Public shop view
 * Logged in users only
-* See firstname, lastname, text and weblink
-* add \[puddinq_admin_info\] as shortcode in posts / pages
+* See Name, info, description and openinghours
+* add \[puddinq_scooters\] as shortcode in posts / pages
 
 ### Plugin setup:
 * Install database
@@ -30,9 +34,10 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 * Drop database
 * unregister 3 options
 
-### Wordpress compatibility tested voor version:
+### Wordpress compatibility tested for version:
 * wordpress 4.1
 * wordpress 4.0
 
 ### changelog
+* 0.2 26-01-2015 rebuild as shop tables and output
 * 0.1 22-12-2014 init/ initial commit 'Base install / view / uninstall'
