@@ -16,7 +16,10 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 # Update a contact
 # Delete a contact
 
-
+### Public contacts view
+* Logged in users only
+* See firstname, lastname, text and weblink
+* add \[puddinq_admin_info\] as shortcode in posts / pages
 
 ### Plugin setup:
 * Install database

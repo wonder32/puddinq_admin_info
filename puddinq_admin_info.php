@@ -57,13 +57,13 @@ function puddinq_info_menu() {
             );
 }
 
-define('PAIDIR', plugin_dir_path(__FILE__));
-    require_once(PAIDIR . 'admin/pai-functions.php');
-    require_once(PAIDIR . 'admin/pai-page.php');
-    require_once(PAIDIR . 'admin/pai-install.php');
-    require_once(PAIDIR . 'admin/pai-bewerk.php');
-    require_once(PAIDIR . 'admin/pai-maak.php');
-    require_once(PAIDIR . 'public/public.php');
+    define('PAIDIR', plugin_dir_path(__FILE__));
+            require_once(PAIDIR . 'admin/pai-functions.php');
+            require_once(PAIDIR . 'admin/pai-page.php');
+            require_once(PAIDIR . 'admin/pai-install.php');
+            require_once(PAIDIR . 'admin/pai-bewerk.php');
+            require_once(PAIDIR . 'admin/pai-maak.php');
+            require_once(PAIDIR . 'public/public.php');
 
 
 /**
@@ -99,20 +99,6 @@ function load_puddinq_admin_info_style() {
 }
 add_action( 'admin_enqueue_scripts', 'load_puddinq_admin_info_style' );
 
-/******************
- * Plugin action
- ******************/
-    //HOOKS
-    add_action('init','puddinq_admin_info_init');
-/*****************/
-/*  FUNCTIONS
-******************/
-function puddinq_admin_info_init(){
-        //do work
-        //puddinq_admin_info_options();
-
-
-}
 
 
 

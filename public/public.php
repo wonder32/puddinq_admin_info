@@ -7,7 +7,7 @@
 //[foobar]
 
 class pai_shortcode {
-    static $add_pai_stylesheet;
+
 
     /***
      *  add shortcode / register stylesheet/ enqueue stylesheet (if)

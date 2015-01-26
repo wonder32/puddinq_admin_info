@@ -4,13 +4,9 @@
  * @version 0.1
  */
 
-/**
- * Setup install function
- */
-    /*
-     * TABLE
-     */
-    // die if not manager
+/*******************************
+ *      Create Table
+ *******************************/
 
 function puddinq_admin_info_install(){
         pai_cheating();
@@ -38,9 +34,9 @@ function puddinq_admin_info_install(){
         add_option( 'pai_db_version', $pai_db_version );
 }
           
-    /*
-     * FILL TABLE
-     */
+/*******************************
+ *      Fill sample data table
+ *******************************/
 
 function puddinq_admin_info_install_data(){
         $pai_fname = 'Stefan';
@@ -64,11 +60,11 @@ function puddinq_admin_info_install_data(){
 
 }
 
-/******************
- * Plugin options / settings
- ******************/
+/*******************************
+ *          CREATE and REGISTER settings
+ *******************************/
 
-        function register_puddinq_admin_info_settings() {
+function register_puddinq_admin_info_settings() {
 	//register our settings
         register_setting( 'puddinq-info', 'option1' );
 	register_setting( 'puddinq-info', 'option2' );
@@ -84,15 +80,15 @@ function puddinq_admin_info_install_data(){
 
 function puddinq_admin_info_uninstall() {
 
-    global $wpdb;
-    $table = $wpdb->prefix."pai";
+        global $wpdb;
+        $table = $wpdb->prefix."pai";
 
-    //Delete any options thats stored
-    delete_option('pai_db_version');
-    delete_option('option1');
-    delete_option('option2');
-    delete_option('option3');
+        //Delete any options thats stored
+        delete_option('pai_db_version');
+        delete_option('option1');
+        delete_option('option2');
+        delete_option('option3');
 
-    $wpdb->query("DROP TABLE IF EXISTS $table");
+        $wpdb->query("DROP TABLE IF EXISTS $table");
 }
 
