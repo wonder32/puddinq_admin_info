@@ -6,11 +6,7 @@
 
 //[foobar]
 
-<<<<<<< HEAD
-class pai_shortcode {
-=======
 class pss_shortcode {
->>>>>>> scooter
 
 
     /***

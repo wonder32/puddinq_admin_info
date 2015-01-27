@@ -12,16 +12,15 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 
 ## Features
 
-### Contacts Admin view
-<<<<<<< HEAD
-# View list of contacts
-# Create a contact
-# Read (list contacts)
-# Update a contact
-# Delete a contact
+### Scooter Shop view
+ View list of scooter shops
+ Create a scooter shop
+ Read (list shops)
+ Update a scooter shop
+ Delete a scooter shop
 
-### Public contacts view
-* Logged in users only
+### Public shop view
+* Logged in users only (not!)
 * See firstname, lastname, text and weblink
 * add \[puddinq_admin_info\] as shortcode in posts / pages
 =======
@@ -51,5 +50,6 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 * wordpress 4.0
 
 ### changelog
+* 0.3 27-01-2015 OOP rebuild as shop tables and output
 * 0.2 26-01-2015 rebuild as shop tables and output
 * 0.1 22-12-2014 init/ initial commit 'Base install / view / uninstall'
