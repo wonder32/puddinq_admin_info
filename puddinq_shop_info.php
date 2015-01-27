@@ -23,7 +23,14 @@ Author URI: https://puddinq.mobi/
         require_once(PSIDIR . 'admin/psi-create.php');
         require_once(PSIDIR . 'public/public.php');
         
-
+    /**********************************************
+     *          PUDDINQ SHOP BASE
+     *          - Add menu (and submenu s)
+     *          - Load admin stylesheets
+     *          - Load javascript file
+     **********************************************/
+        
+        
 class psi_base {
     
     public function __construct() {
@@ -91,6 +98,15 @@ class psi_base {
         wp_enqueue_script('puddinq_shop_info_script');
     }
 }
+
+    /**********************************************
+     *          IF CLASS EXISTS CREATE OBJECT
+     *          AND REGISTER INSTALL AND UNINSTALL HOOKS
+     *          - OBJECT RUNS __CONSTRUCT
+     *              - CONSTRUCT CREATES MENUS (SEE ABOVE)
+     *          - INSTALL AND UNINSTALL ACTIONS ARE IN:
+     *              psi-install.php -> class puddinq-shop-INSTALL
+     **********************************************/
 
 if( class_exists( 'psi_base' ) ) {
         $psi_base = new psi_base;

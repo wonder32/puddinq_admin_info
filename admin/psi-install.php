@@ -4,14 +4,23 @@
  * @version 0.1
  */
 
-/**
- * Setup install function
- */
     /**********************************************
+     *          INSTALL CLASS
+     *          - CREATE TABLE
+     *              - REGISTER psi_db_version
+     *          - FILL TABLE
+     *          - REGISTER WORDPRESS OPTIONS
+     *          - UNINSTALL
+     *              - DROP TABLE
+     *              - UNREGISTER WORDPRESS OPTIONS
+     *              - UNREGISTER psi_db_version
+     **********************************************/
+
+class puddinq_shop_install {
+
+     /**********************************************
      *          CREATE TABLE
      **********************************************/
-    // die if not manager
-class puddinq_shop_install {
     
 
     public static function puddinq_shop_info_install(){
