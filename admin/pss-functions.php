@@ -8,11 +8,15 @@
 /**
  * Options admin page
  */
-function public_puddinq_admin_info_view() {
+
+class pss_view {
+    
+}
+function public_puddinq_scooter_shop_view() {
     // make database connection available for function
     global $wpdb;
     // get all rows from database
-    $query = " SELECT * FROM wp_pai";
+    $query = " SELECT * FROM wp_pss";
     // check if it worked
     if($wpdb->query($query) === FALSE) {
         $wpdb->show_errors();
@@ -21,7 +25,7 @@ function public_puddinq_admin_info_view() {
         $results = $wpdb->get_results($query);
     }
     // loop true the results
-    echo "<table class='pai wp-list-table widefat fixed'>";
+    echo "<table class='pss wp-list-table widefat fixed'>";
     echo '<tr><th>Voornaam</th><th>Achternaam</th><th>Tekst</th><th>URL</th></tr>';
     foreach ( $results as $contact ) {
         echo '<tr>';
@@ -33,11 +37,11 @@ function public_puddinq_admin_info_view() {
     echo '</table>';    
 }
 
-function puddinq_admin_info_view_all() {
+function puddinq_scooter_shop_view_all() {
     // make database connection available for function
     global $wpdb;
     // get all rows from database
-    $query = " SELECT * FROM wp_pai";
+    $query = " SELECT * FROM wp_pss";
     // check if it worked
     if($wpdb->query($query) === FALSE) {
         $wpdb->show_errors();
@@ -54,8 +58,8 @@ function puddinq_admin_info_view_all() {
         echo '<td>' . $contact->lname . '</td>';
         echo '<td>' . $contact->text . '</td>';
         echo "<td><a href='" . $contact->url . "'>weblink</a></td>";
-        echo "<td><a href='" . admin_url('admin.php?page=puddinq_admin_info_bewerk&id='.$contact->id) . "'>Update</a></td>";
-        echo "<td><form action='" . admin_url('admin.php?page=puddinq_admin_info_bewerk&id='.$contact->id) . "' method='post' >";
+        echo "<td><a href='" . admin_url('admin.php?page=puddinq_scooter_shop_bewerk&id='.$contact->id) . "'>Update</a></td>";
+        echo "<td><form action='" . admin_url('admin.php?page=puddinq_scooter_shop_bewerk&id='.$contact->id) . "' method='post' >";
         ?>
         <input class='button' type='submit' value='verwijder' name='delete'
         onclick="return confirm('&iquest;Weet je zeker dat je <?php echo $contact->lname; ?> wilt verwijderen ?')">
@@ -66,7 +70,7 @@ function puddinq_admin_info_view_all() {
     echo '</table>';    
 }
 
-function pai_cheating() {
+function pss_cheating() {
     
         // die if not manager
     if ( !current_user_can( 'manage_options' ) )  {
@@ -75,7 +79,7 @@ function pai_cheating() {
     
 }
 
-function pai_logged_in() {
+function pss_logged_in() {
     if ( !is_user_logged_in() ) {
         wp_die('je moet ingelogd zijn om deze gegevens te bekijken');
     }
