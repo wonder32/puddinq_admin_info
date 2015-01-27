@@ -18,7 +18,7 @@ th, td {
     width: 90%;
 }
 
-.pss input, .pss textarea {
+.psi input, .psi textarea {
     border-radius: 3px;
     font-family: 'Ubuntu', 'Lato', sans-serif;
     color: #FFF;
@@ -26,7 +26,7 @@ th, td {
     height: 25px;
 }
 
- .pss input:required:valid, .pss textarea {
+ .psi input:required:valid, .psi textarea {
     background: #1F2124;
     background: -moz-linear-gradient(#1F2124, #27292C);
     background: -ms-linear-gradient(#1F2124, #27292C);
@@ -51,14 +51,14 @@ input:required:invalid, input:focus:invalid {
     border: 2px solid #FF6600;
 }
 
-.pss textarea:focus, .pss input:focus {
+.psi textarea:focus, .psi input:focus {
     box-shadow: inset 0 0 2px #000;
     background: #494D54;
     border-color: #51CBEE;
     outline: none;
 }
 
-.pss textarea {
+.psi textarea {
     cols: "20"; 
     rows: "10"; 
     height: 100px;

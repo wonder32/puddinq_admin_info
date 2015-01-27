@@ -16,7 +16,7 @@
         // make database connection available for function
         global $wpdb;
         // get all rows from database
-        $query = " SELECT * FROM wp_pss";
+        $query = " SELECT * FROM wp_psi";
         // check if it worked
         if($wpdb->query($query) === FALSE) {
             $wpdb->show_errors();
@@ -25,7 +25,7 @@
             $results = $wpdb->get_results($query);
         }
         // loop true the results
-        echo "<table class='pss wp-list-table widefat fixed'>";
+        echo "<table class='psi wp-list-table widefat fixed'>";
         echo '<tr><th>Voornaam</th><th>Achternaam</th><th>Tekst</th><th>URL</th></tr>';
         foreach ( $results as $contact ) {
             echo '<tr>';
@@ -41,7 +41,7 @@
         // make database connection available for function
         global $wpdb;
         // get all rows from database
-        $query = " SELECT * FROM wp_pss";
+        $query = " SELECT * FROM wp_psi";
         // check if it worked
         if($wpdb->query($query) === FALSE) {
             $wpdb->show_errors();
@@ -70,7 +70,7 @@
         echo '</table>';    
     }
 
-    function pss_cheating() {
+    function psi_cheating() {
 
             // die if not manager
         if ( !current_user_can( 'manage_options' ) )  {
@@ -79,7 +79,7 @@
 
     }
 
-    function pss_logged_in() {
+    function psi_logged_in() {
         if ( !is_user_logged_in() ) {
             wp_die('je moet ingelogd zijn om deze gegevens te bekijken');
         }

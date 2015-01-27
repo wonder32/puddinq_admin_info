@@ -4,21 +4,21 @@
  *  version 0.2
  * 
  */
-class pss_edit {
+class psi_edit {
 public static function puddinq_scooter_shop_bewerk () {
     
     // die if not manager
-    pss_cheating();
+    psi_cheating();
 
     global $wpdb;
     
-    $table  = $wpdb->prefix . "pss";
+    $table  = $wpdb->prefix . "psi";
     $id     = $_GET["id"];
     //(isset($_POST["time"]))? $time = $_POST["time"]: $time = current_time( 'mysql' );
     (isset($_POST["fname"]))? $fname = $_POST["fname"]: $fname = '';
     (isset($_POST["lname"]))? $lname = $_POST["lname"]: $lname = '';
-    (isset($_POST["pss_text"]))? $pss_text = $_POST["pss_text"]: $pss_text = '';
-    (isset($_POST["pss_url"]))? $pss_url = $_POST["pss_url"]: $pss_url = '';
+    (isset($_POST["psi_text"]))? $psi_text = $_POST["psi_text"]: $psi_text = '';
+    (isset($_POST["psi_url"]))? $psi_url = $_POST["psi_url"]: $psi_url = '';
 //update
 if(isset($_POST['update'])){
         $time = current_time( 'mysql' );
@@ -29,8 +29,8 @@ if(isset($_POST['update'])){
 		'time' => $time,	// string
 		'fname' => $fname,	// string
 		'lname' => $lname,	// string
-		'text' => $pss_text,	// string
-		'url' => $pss_url	// string
+		'text' => $psi_text,	// string
+		'url' => $psi_url	// string
 	), 
 	array( 'id' => $id ), 
 	array( 
@@ -56,14 +56,14 @@ else{//selecting value to update
                 $time   = $s->time;
 		$fname  = $s->fname;
                 $lname   = $s->lname;
-                $pss_text= $s->text;
-                $pss_url = $s->url;
+                $psi_text= $s->text;
+                $psi_url = $s->url;
 	}
 }
 ?>
 <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/puddinq-admin-info/admin-style.css" rel="stylesheet" />
 
-<div class="wrap pss">
+<div class="wrap psi">
     <h2>Contact:</h2>
 
     <?php if(isset($_POST['delete'])){?>
@@ -81,9 +81,9 @@ else{//selecting value to update
             <tr><th>Laatste wijziging</th><td><input type="text" name="time" value="<?php echo $time;?>" required/></td></tr>
             <tr><th>Voornaam</th><td><input type="text" name="fname" value="<?php echo $fname;?>" required/></td></tr>
             <tr><th>Achternaam</th><td><input type="text" name="lname" value="<?php echo $lname;?>" required/></td></tr>
-            <tr><th>Beschrijving</th><td><textarea name="pss_text"><?php echo $pss_text;?></textarea></td></tr>
-            <tr><th>Email</th><td><input type="email" name="pss_email" placeholder="john@test.nl" required /></td></tr>
-            <tr><th>Link</th><td><input type="url" name="pss_url" value="<?php echo $pss_url;?>" required pattern="https?://.+"/></td></tr>
+            <tr><th>Beschrijving</th><td><textarea name="psi_text"><?php echo $psi_text;?></textarea></td></tr>
+            <tr><th>Email</th><td><input type="email" name="psi_email" placeholder="john@test.nl" required /></td></tr>
+            <tr><th>Link</th><td><input type="url" name="psi_url" value="<?php echo $psi_url;?>" required pattern="https?://.+"/></td></tr>
             </table>
             <input type='submit' name="update" value='Opslaan' class='button'> &nbsp;&nbsp;
             <input type='submit' name="delete" value='Verwijder' class='button' 

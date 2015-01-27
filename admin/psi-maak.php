@@ -5,19 +5,19 @@
  * version 0.2
  * 
  */
-class pss_make {
+class psi_make {
 public static function puddinq_scooter_shop_nieuw () {
     
     // die if not manager
-    pss_cheating();
+    psi_cheating();
     
     global $wpdb;    
-    $table  = $wpdb->prefix . "pss";
+    $table  = $wpdb->prefix . "psi";
     $time   = current_time( 'mysql' );
     (isset($_POST["fname"]))? $fname = $_POST["fname"]: $fname = '';
     (isset($_POST["lname"]))? $lname = $_POST["lname"]: $lname = '';
-    (isset($_POST["pss_text"]))? $pss_text = $_POST["pss_text"]: $pss_text = '';
-    (isset($_POST["pss_url"]))? $pss_url = $_POST["pss_url"]: $pss_url = '';
+    (isset($_POST["psi_text"]))? $psi_text = $_POST["psi_text"]: $psi_text = '';
+    (isset($_POST["psi_url"]))? $psi_url = $_POST["psi_url"]: $psi_url = '';
     
     if (isset($_POST['insert'])) {
         $wpdb->insert(
@@ -26,8 +26,8 @@ public static function puddinq_scooter_shop_nieuw () {
                     'time' => $time,
                     'fname' => $fname,
                     'lname' => $lname,
-                    'text' => $pss_text,
-                    'url' => $pss_url),
+                    'text' => $psi_text,
+                    'url' => $psi_url),
                 array('%s', '%s', '%s', '%s', '%s')
                 );
         $id = $wpdb->insert_id;
@@ -39,7 +39,7 @@ public static function puddinq_scooter_shop_nieuw () {
 
 
 <?php $wpdb->insert_id; ?>
-<div class="wrap pss">
+<div class="wrap psi">
     <h2>Nieuw contact</h2>
     
     <?php if (isset($message)): ?>
@@ -51,9 +51,9 @@ public static function puddinq_scooter_shop_nieuw () {
         <table class='wp-list-table widefat fixed'>
         <tr><th>Voornaam</th><td><input type="text" name="fname" placeholder="Voornaam" required /></td></tr>
         <tr><th>Achternaam</th><td><input type="text" name="lname" placeholder="Achternaam" required /></td></tr>
-        <tr><th>Beschrijving</th><td><textarea name="pss_text" placeholder="Wie is ut"></textarea></td></tr>
-        <tr><th>Email</th><td><input type="email" name="pss_email" placeholder="john@test.nl" required /></td></tr>
-        <tr><th>Link</th><td><input type="url" name="pss_url" placeholder="www.Weblink.nl" required pattern="https?://.+"/></td></tr>
+        <tr><th>Beschrijving</th><td><textarea name="psi_text" placeholder="Wie is ut"></textarea></td></tr>
+        <tr><th>Email</th><td><input type="email" name="psi_email" placeholder="john@test.nl" required /></td></tr>
+        <tr><th>Link</th><td><input type="url" name="psi_url" placeholder="www.Weblink.nl" required pattern="https?://.+"/></td></tr>
         </table>
         <input type='submit' name="insert" value='Save' class='button'>
     </form>

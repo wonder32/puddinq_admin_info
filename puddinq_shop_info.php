@@ -15,16 +15,16 @@ Author URI: https://puddinq.mobi/
     /**********************************************
      *          LOAD FILES
      **********************************************/
-        define('PSSDIR', plugin_dir_path(__FILE__));
-        require_once(PSSDIR . 'admin/pss-functions.php');
-        require_once(PSSDIR . 'admin/pss-page.php');
-        require_once(PSSDIR . 'admin/pss-install.php');
-        require_once(PSSDIR . 'admin/pss-bewerk.php');
-        require_once(PSSDIR . 'admin/pss-maak.php');
-        require_once(PSSDIR . 'public/public.php');
+        define('PSIDIR', plugin_dir_path(__FILE__));
+        require_once(PSIDIR . 'admin/psi-functions.php');
+        require_once(PSIDIR . 'admin/psi-page.php');
+        require_once(PSIDIR . 'admin/psi-install.php');
+        require_once(PSIDIR . 'admin/psi-bewerk.php');
+        require_once(PSIDIR . 'admin/psi-maak.php');
+        require_once(PSIDIR . 'public/public.php');
         
 
-class pss_base {
+class psi_base {
     
     public function __construct() {
 
@@ -34,29 +34,29 @@ class pss_base {
     }
     
     public function init(){
-            add_action( 'admin_menu', array($this, 'pss_menu_page' ));
-            add_action( 'admin_menu', array($this, 'pss_menu_sub_page_new' ));
-            add_action( 'admin_menu', array($this, 'pss_menu_sub_page_edit' ));
-            add_action( 'admin_enqueue_scripts', array($this, 'pss_load_scooter_shop_style' ));
-            add_action( 'admin_enqueue_scripts', array($this, 'pss_load_scooter_shop_script' ));
+            add_action( 'admin_menu', array($this, 'psi_menu_page' ));
+            add_action( 'admin_menu', array($this, 'psi_menu_sub_page_new' ));
+            add_action( 'admin_menu', array($this, 'psi_menu_sub_page_edit' ));
+            add_action( 'admin_enqueue_scripts', array($this, 'psi_load_scooter_shop_style' ));
+            add_action( 'admin_enqueue_scripts', array($this, 'psi_load_scooter_shop_script' ));
             //register the settings
             add_action( 'admin_init', array('puddinq_scooter_install', 'register_puddinq_scooter_shop_settings' ));
 }
         
-    public function pss_menu_page() {
+    public function psi_menu_page() {
             // Add main admin page
             add_menu_page(
             'Puddinq Scooter Shop',       //Pagina titel 
-            'PSS Admin',                //Menu titel
+            'PSI Admin',                //Menu titel
             'manage_options',           //Toegang
             'scooter_shop',               // menu slug
-            array('pss_page', 'puddinq_scooter_shop_options'), //function
+            array('psi_page', 'puddinq_scooter_shop_options'), //function
             'dashicons-editor-italic',  //icon
             '14'                        //positie;
             );
     }
 
-    public function pss_menu_sub_page_new() {
+    public function psi_menu_sub_page_new() {
             // Add sub page new contact
             add_submenu_page(
             'scooter_shop',               //onderdeel van bovenstaand admin info
@@ -64,11 +64,11 @@ class pss_base {
             'Nieuw shop', 
             'manage_options',           //toegang
             'puddinq_scooter_shop_nieuw', //slug 
-            array('pss_make', 'puddinq_scooter_shop_nieuw')  //functiom
+            array('psi_make', 'puddinq_scooter_shop_nieuw')  //functiom
             );
     }
     
-    public function pss_menu_sub_page_edit() {
+    public function psi_menu_sub_page_edit() {
             // Add hidden sub page edit contact   
         add_submenu_page(
             'null',                     //geen onderdeel -> daardoor verborgen
@@ -76,24 +76,24 @@ class pss_base {
             'Bewerk shop', 
             'manage_options',           //toegang
             'puddinq_scooter_shop_bewerk',//slug 
-            array('pss_edit', 'puddinq_scooter_shop_bewerk') //function
+            array('psi_edit', 'puddinq_scooter_shop_bewerk') //function
             );
     }
 
     
-    public function pss_load_scooter_shop_style() {
+    public function psi_load_scooter_shop_style() {
         wp_register_style( 'puddinq_scooter_shop_style', plugin_dir_url( __FILE__ ) . 'css/admin-style.css', false, '0.0.1' );
         wp_enqueue_style( 'puddinq_scooter_shop_style' );
     }
     
-    public function pss_load_scooter_shop_script() {
+    public function psi_load_scooter_shop_script() {
         wp_register_script('puddinq_scooter_shop_script',plugin_dir_url( __FILE__ ) . 'js/puddinq-scooter-info.js');
         wp_enqueue_script('puddinq_scooter_shop_script');
     }
 }
 
-if( class_exists( 'pss_base' ) ) {
-        $pss_base = new pss_base;
+if( class_exists( 'psi_base' ) ) {
+        $psi_base = new psi_base;
         // Activation
         register_activation_hook(__FILE__, array('puddinq_scooter_install', 'puddinq_scooter_shop_install' ));
         register_activation_hook(__FILE__, array('puddinq_scooter_install', 'puddinq_shooter_shop_install_data' ));

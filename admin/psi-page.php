@@ -4,16 +4,16 @@
  *  version 0.2
  * 
  */
-class pss_page {
+class psi_page {
     public static function puddinq_scooter_shop_options () {
 
     // die if not manager
-    pss_cheating();
+    psi_cheating();
     
     // global settings form
 ?>
 
-<link type="text/css" href="<?php echo PSSDIR; ?>css/style.css" rel="stylesheet" />
+<link type="text/css" href="<?php echo PSIDIR; ?>css/style.css" rel="stylesheet" />
 <div class="wrap">
 <h2>
 <?php

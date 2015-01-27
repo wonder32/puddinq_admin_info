@@ -15,12 +15,12 @@ class puddinq_scooter_install {
     
 
     public static function puddinq_scooter_shop_install(){
-        pss_cheating();
+        psi_cheating();
             global $wpdb;
-            global $pss_db_version; 
+            global $psi_db_version; 
 
             $pai_db_version = '0.1';
-            $table_name = $wpdb->prefix . "pss";
+            $table_name = $wpdb->prefix . "psi";
 
             $charset_collate = $wpdb->get_charset_collate();
 
@@ -44,22 +44,22 @@ class puddinq_scooter_install {
      **********************************************/
 
         public static function puddinq_shooter_shop_install_data(){
-                $pss_fname = 'Stefan';
-                $pss_lname = 'Schotvanger';
-                $pss_text = 'Owner';
-                $pss_url = 'www.puddinq.mobi/wip/profiel/';
+                $psi_fname = 'Stefan';
+                $psi_lname = 'Schotvanger';
+                $psi_text = 'Owner';
+                $psi_url = 'www.puddinq.mobi/wip/profiel/';
 
                 global $wpdb;
-                $table_name = $wpdb->prefix . "pss";
+                $table_name = $wpdb->prefix . "psi";
 
                 $wpdb->insert( 
                         $table_name, 
                         array( 
                                 'time' => current_time( 'mysql' ), 
-                                'fname' => $pss_fname,
-                                'lname' => $pss_lname,
-                                'text' => $pss_text,
-                                'url'  => $pss_url,
+                                'fname' => $psi_fname,
+                                'lname' => $psi_lname,
+                                'text' => $psi_text,
+                                'url'  => $psi_url,
                         ) 
                 );
 
@@ -85,10 +85,10 @@ class puddinq_scooter_install {
         public static function puddinq_scooter_shop_uninstall() {
 
             global $wpdb;
-            $table = $wpdb->prefix."pss";
+            $table = $wpdb->prefix."psi";
 
             //Delete any options thats stored
-            delete_option('pss_db_version');
+            delete_option('psi_db_version');
             delete_option('option1');
             delete_option('option2');
             delete_option('option3');

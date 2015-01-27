@@ -6,24 +6,24 @@
 
 //[foobar]
 
-class pss_shortcode {
+class psi_shortcode {
 
 
     /***
      *  add shortcode / register stylesheet/ enqueue stylesheet (if)
      */
     static function init() {
-        add_shortcode( 'puddinq_scooter_shop', array(__CLASS__, 'pss_public' ));
-        add_action('init', array(__CLASS__, 'register_pss_stylesheet'));
-        add_action( 'wp_head', array(__CLASS__, 'load_pss_stylesheet'));
+        add_shortcode( 'puddinq_shop_info', array(__CLASS__, 'psi_public' ));
+        add_action('init', array(__CLASS__, 'register_psi_stylesheet'));
+        add_action( 'wp_head', array(__CLASS__, 'load_psi_stylesheet'));
     }
     
     /***
      *  Shortcode
      */
     
-    static function pss_public() {
-        pss_logged_in();
+    static function psi_public() {
+        psi_logged_in();
         public_puddinq_scooter_shop_view();
         
     }
@@ -32,7 +32,7 @@ class pss_shortcode {
      *  Register stylesheet
      */
     
-    static function register_pss_stylesheet() {    
+    static function register_psi_stylesheet() {    
         wp_register_style( 'public_puddinq_scooter_shop_style', dirname(plugin_dir_url( __FILE__ )) . '/css/public-style.css', false, '0.0.1' );
 
     }
@@ -41,7 +41,7 @@ class pss_shortcode {
      *  Enqueue stylesheet if pattern shortcode is found in page content
      */
     
-    static function load_pss_stylesheet() {
+    static function load_psi_stylesheet() {
         global $wp_query;
         $posts = $wp_query->posts;
         $pattern = get_shortcode_regex();
@@ -53,6 +53,6 @@ class pss_shortcode {
     }
 }
 
-pss_shortcode::init();
+psi_shortcode::init();
 
 
