@@ -5,15 +5,15 @@
  * 
  */
 
-function puddinq_admin_info_options () {
+function puddinq_scooter_shop_options () {
 
     // die if not manager
-    pai_cheating();
+    pss_cheating();
     
     // global settings form
 ?>
 
-<link type="text/css" href="<?php echo PAIDIR; ?>css/style.css" rel="stylesheet" />
+<link type="text/css" href="<?php echo PSSDIR; ?>css/style.css" rel="stylesheet" />
 <div class="wrap">
 <h2>
 <?php
@@ -51,9 +51,9 @@ printf( __( 'Welcome to WordPress&nbsp;%s' ), $page_title );
 <?php
     // 
 ?>
-    <a class="button" href="<?php echo admin_url('admin.php?page=puddinq_admin_info_nieuw'); ?>">Nieuw contact aanmaken</a>
+    <a class="button" href="<?php echo admin_url('admin.php?page=puddinq_scooter_shop_nieuw'); ?>">Nieuw contact aanmaken</a>
  
-    <?php puddinq_admin_info_view_all()?>
+    <?php puddinq_scooter_shop_view_all()?>
 </div>
 <?php
 }

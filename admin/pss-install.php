@@ -7,92 +7,92 @@
 /**
  * Setup install function
  */
-    /*
-     * TABLE
-     */
+    /**********************************************
+     *          CREATE TABLE
+     **********************************************/
     // die if not manager
+class puddinq_scooter_install {
+    
 
-function puddinq_admin_info_install(){
-        pai_cheating();
-        global $wpdb;
-        global $pai_db_version; 
-        
-        $pai_db_version = '0.1';
-        $table_name = $wpdb->prefix . "pai";
+    public static function puddinq_scooter_shop_install(){
+        //pai_cheating();
+            global $wpdb;
+            global $pss_db_version; 
 
-        $charset_collate = $wpdb->get_charset_collate();
+            $pai_db_version = '0.1';
+            $table_name = $wpdb->prefix . "pss";
 
-        $sql = "CREATE TABLE $table_name (
-          id mediumint(9) NOT NULL AUTO_INCREMENT,
-          time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-          fname tinytext NOT NULL,
-          lname tinytext NOT NULL,
-          text text NOT NULL,
-          url varchar(55) DEFAULT '' NOT NULL,
-          UNIQUE KEY id (id)
-        ) $charset_collate;";
+            $charset_collate = $wpdb->get_charset_collate();
 
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-        dbDelta( $sql );
+            $sql = "CREATE TABLE $table_name (
+              id mediumint(9) NOT NULL AUTO_INCREMENT,
+              time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+              fname tinytext NOT NULL,
+              lname tinytext NOT NULL,
+              text text NOT NULL,
+              url varchar(55) DEFAULT '' NOT NULL,
+              UNIQUE KEY id (id)
+            ) $charset_collate;";
 
-        add_option( 'pai_db_version', $pai_db_version );
-}
-          
-    /*
-     * FILL TABLE
-     */
+            require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+            dbDelta( $sql );
 
-function puddinq_admin_info_install_data(){
-        $pai_fname = 'Stefan';
-        $pai_lname = 'Schotvanger';
-        $pai_text = 'Owner';
-        $pai_url = 'www.puddinq.mobi/wip/profiel/';
+            add_option( 'pai_db_version', $pai_db_version );
+    }
+    /**********************************************
+     *          FILL TABLE
+     **********************************************/
 
-        global $wpdb;
-        $table_name = $wpdb->prefix . "pai";
+        public static function puddinq_shooter_shop_install_data(){
+                $pss_fname = 'Stefan';
+                $pss_lname = 'Schotvanger';
+                $pss_text = 'Owner';
+                $pss_url = 'www.puddinq.mobi/wip/profiel/';
 
-        $wpdb->insert( 
-                $table_name, 
-                array( 
-                        'time' => current_time( 'mysql' ), 
-                        'fname' => $pai_fname,
-                        'lname' => $pai_lname,
-                        'text' => $pai_text,
-                        'url'  => $pai_url,
-                ) 
-        );
+                global $wpdb;
+                $table_name = $wpdb->prefix . "pss";
 
-}
+                $wpdb->insert( 
+                        $table_name, 
+                        array( 
+                                'time' => current_time( 'mysql' ), 
+                                'fname' => $pss_fname,
+                                'lname' => $pss_lname,
+                                'text' => $pss_text,
+                                'url'  => $pss_url,
+                        ) 
+                );
 
-/******************
- * Plugin options / settings
- ******************/
-
-        function register_puddinq_admin_info_settings() {
-	//register our settings
-        register_setting( 'puddinq-info', 'option1' );
-	register_setting( 'puddinq-info', 'option2' );
-	register_setting( 'puddinq-info', 'option3' );
         }
 
-    //register the settings
-    add_action( 'admin_init', 'register_puddinq_admin_info_settings' );
+    /**********************************************
+     *          PLUGIN SETTINGS IN WORDPRESS TABLE (unused)
+     **********************************************/
 
-/*******************************
- *          UNINSTALL
- *******************************/
+        public static function register_puddinq_scooter_shop_settings() {
+                //register our settings
+                register_setting( 'puddinq-info', 'option1' );
+                register_setting( 'puddinq-info', 'option2' );
+                register_setting( 'puddinq-info', 'option3' );
+        }
 
-function puddinq_admin_info_uninstall() {
 
-    global $wpdb;
-    $table = $wpdb->prefix."pai";
 
-    //Delete any options thats stored
-    delete_option('pai_db_version');
-    delete_option('option1');
-    delete_option('option2');
-    delete_option('option3');
+    /**********************************************
+     *          UNINSTALL
+     **********************************************/
 
-    $wpdb->query("DROP TABLE IF EXISTS $table");
+        public static function puddinq_scooter_shop_uninstall() {
+
+            global $wpdb;
+            $table = $wpdb->prefix."pss";
+
+            //Delete any options thats stored
+            delete_option('pss_db_version');
+            delete_option('option1');
+            delete_option('option2');
+            delete_option('option3');
+
+            $wpdb->query("DROP TABLE IF EXISTS $table");
+        }
 }
-

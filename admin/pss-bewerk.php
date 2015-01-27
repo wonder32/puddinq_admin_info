@@ -5,20 +5,20 @@
  * 
  */
 
-function puddinq_admin_info_bewerk () {
+function puddinq_scooter_shop_bewerk () {
     
     // die if not manager
-    pai_cheating();
+    pss_cheating();
 
     global $wpdb;
     
-    $table  = $wpdb->prefix . "pai";
+    $table  = $wpdb->prefix . "pss";
     $id     = $_GET["id"];
     //(isset($_POST["time"]))? $time = $_POST["time"]: $time = current_time( 'mysql' );
     (isset($_POST["fname"]))? $fname = $_POST["fname"]: $fname = '';
     (isset($_POST["lname"]))? $lname = $_POST["lname"]: $lname = '';
-    (isset($_POST["pai_text"]))? $pai_text = $_POST["pai_text"]: $pai_text = '';
-    (isset($_POST["pai_url"]))? $pai_url = $_POST["pai_url"]: $pai_url = '';
+    (isset($_POST["pss_text"]))? $pss_text = $_POST["pss_text"]: $pss_text = '';
+    (isset($_POST["pss_url"]))? $pss_url = $_POST["pss_url"]: $pss_url = '';
 //update
 if(isset($_POST['update'])){
         $time = current_time( 'mysql' );
@@ -29,8 +29,8 @@ if(isset($_POST['update'])){
 		'time' => $time,	// string
 		'fname' => $fname,	// string
 		'lname' => $lname,	// string
-		'text' => $pai_text,	// string
-		'url' => $pai_url	// string
+		'text' => $pss_text,	// string
+		'url' => $pss_url	// string
 	), 
 	array( 'id' => $id ), 
 	array( 
@@ -56,23 +56,23 @@ else{//selecting value to update
                 $time   = $s->time;
 		$fname  = $s->fname;
                 $lname   = $s->lname;
-                $pai_text= $s->text;
-                $pai_url = $s->url;
+                $pss_text= $s->text;
+                $pss_url = $s->url;
 	}
 }
 ?>
 <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/puddinq-admin-info/admin-style.css" rel="stylesheet" />
 
-<div class="wrap pai">
+<div class="wrap pss">
     <h2>Contact:</h2>
 
     <?php if(isset($_POST['delete'])){?>
         <div class="updated"><p>Contact verwijderd</p></div>
-        <a class="button" href="<?php echo admin_url('admin.php?page=admin_info')?>">&laquo; Terug naar contacten</a>
+        <a class="button" href="<?php echo admin_url('admin.php?page=scooter_shop')?>">&laquo; Terug naar contacten</a>
 
     <?php } else if(isset($_POST['update'])) {?>
         <div class="updated"><p>Contact bewerkt</p></div>
-        <a href="<?php echo admin_url('admin.php?page=admin_info')?>">&laquo; Back to schools list</a>
+        <a href="<?php echo admin_url('admin.php?page=scooter_shop')?>">&laquo; Back to schools list</a>
 
     <?php } else {?>
         <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
@@ -81,9 +81,9 @@ else{//selecting value to update
             <tr><th>Laatste wijziging</th><td><input type="text" name="time" value="<?php echo $time;?>" required/></td></tr>
             <tr><th>Voornaam</th><td><input type="text" name="fname" value="<?php echo $fname;?>" required/></td></tr>
             <tr><th>Achternaam</th><td><input type="text" name="lname" value="<?php echo $lname;?>" required/></td></tr>
-            <tr><th>Beschrijving</th><td><textarea name="pai_text"><?php echo $pai_text;?></textarea></td></tr>
-            <tr><th>Email</th><td><input type="email" name="pai_email" placeholder="john@test.nl" required /></td></tr>
-            <tr><th>Link</th><td><input type="url" name="pai_url" value="<?php echo $pai_url;?>" required pattern="https?://.+"/></td></tr>
+            <tr><th>Beschrijving</th><td><textarea name="pss_text"><?php echo $pss_text;?></textarea></td></tr>
+            <tr><th>Email</th><td><input type="email" name="pss_email" placeholder="john@test.nl" required /></td></tr>
+            <tr><th>Link</th><td><input type="url" name="pss_url" value="<?php echo $pss_url;?>" required pattern="https?://.+"/></td></tr>
             </table>
             <input type='submit' name="update" value='Opslaan' class='button'> &nbsp;&nbsp;
             <input type='submit' name="delete" value='Verwijder' class='button' 

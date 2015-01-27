@@ -3,7 +3,6 @@
 [![Puddinq](https://www.puddinq.mobi/wp-content/themes/puddinq/img/logo.gif)](http://www.puddinq.mobi)
 [![puddinq](https://www.puddinq.mobi/wip/logo_puddinq.gif)](https://www.puddinq.mobi)
 [![puddinq](https://www.puddinq.mobi/wip/wordpress.png)](https://www.puddinq.mobi)
-[![puddinq](https://www.puddinq.mobi/wip/logo_puddinq.gif)](https://www.puddinq.mobi)
 
 Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 

@@ -6,7 +6,7 @@
 
 //[foobar]
 
-class pai_shortcode {
+class pss_shortcode {
 
 
     /***
@@ -53,6 +53,6 @@ class pai_shortcode {
     }
 }
 
-pai_shortcode::init();
+pss_shortcode::init();
 
 
