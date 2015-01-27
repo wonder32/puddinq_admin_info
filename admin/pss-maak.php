@@ -5,8 +5,8 @@
  * version 0.2
  * 
  */
-
-function puddinq_scooter_shop_nieuw () {
+class pss_make {
+public static function puddinq_scooter_shop_nieuw () {
     
     // die if not manager
     pss_cheating();
@@ -60,4 +60,5 @@ function puddinq_scooter_shop_nieuw () {
 </div>
 
 <?php
+}
 }

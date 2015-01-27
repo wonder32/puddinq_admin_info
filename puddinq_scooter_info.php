@@ -50,7 +50,7 @@ class pss_base {
             'PSS Admin',                //Menu titel
             'manage_options',           //Toegang
             'scooter_shop',               // menu slug
-            'puddinq_scooter_shop_options', //function
+            array('pss_page', 'puddinq_scooter_shop_options'), //function
             'dashicons-editor-italic',  //icon
             '14'                        //positie;
             );
@@ -64,7 +64,7 @@ class pss_base {
             'Nieuw shop', 
             'manage_options',           //toegang
             'puddinq_scooter_shop_nieuw', //slug 
-            'puddinq_scooter_shop_nieuw'  //functiom
+            array('pss_make', 'puddinq_scooter_shop_nieuw')  //functiom
             );
     }
     
@@ -76,7 +76,7 @@ class pss_base {
             'Bewerk shop', 
             'manage_options',           //toegang
             'puddinq_scooter_shop_bewerk',//slug 
-            'puddinq_scooter_shop_bewerk' //function
+            array('pss_edit', 'puddinq_scooter_shop_bewerk') //function
             );
     }
 

@@ -15,7 +15,7 @@ class puddinq_scooter_install {
     
 
     public static function puddinq_scooter_shop_install(){
-        //pai_cheating();
+        pss_cheating();
             global $wpdb;
             global $pss_db_version; 
 

@@ -4,8 +4,8 @@
  *  version 0.2
  * 
  */
-
-function puddinq_scooter_shop_bewerk () {
+class pss_edit {
+public static function puddinq_scooter_shop_bewerk () {
     
     // die if not manager
     pss_cheating();
@@ -94,4 +94,5 @@ else{//selecting value to update
 
 </div>
 <?php
+}
 }

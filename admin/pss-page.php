@@ -4,8 +4,8 @@
  *  version 0.2
  * 
  */
-
-function puddinq_scooter_shop_options () {
+class pss_page {
+    public static function puddinq_scooter_shop_options () {
 
     // die if not manager
     pss_cheating();
@@ -56,5 +56,6 @@ printf( __( 'Welcome to WordPress&nbsp;%s' ), $page_title );
     <?php puddinq_scooter_shop_view_all()?>
 </div>
 <?php
+}
 }
 ?>
