@@ -11,10 +11,10 @@
      *          CREATE TABLE
      **********************************************/
     // die if not manager
-class puddinq_scooter_install {
+class puddinq_shop_install {
     
 
-    public static function puddinq_scooter_shop_install(){
+    public static function puddinq_shop_info_install(){
         psi_cheating();
             global $wpdb;
             global $psi_db_version; 
@@ -43,7 +43,7 @@ class puddinq_scooter_install {
      *          FILL TABLE
      **********************************************/
 
-        public static function puddinq_shooter_shop_install_data(){
+        public static function puddinq_shop_info_install_data(){
                 $psi_fname = 'Stefan';
                 $psi_lname = 'Schotvanger';
                 $psi_text = 'Owner';
@@ -69,7 +69,7 @@ class puddinq_scooter_install {
      *          PLUGIN SETTINGS IN WORDPRESS TABLE (unused)
      **********************************************/
 
-        public static function register_puddinq_scooter_shop_settings() {
+        public static function register_puddinq_shop_info_settings() {
                 //register our settings
                 register_setting( 'puddinq-info', 'option1' );
                 register_setting( 'puddinq-info', 'option2' );
@@ -82,7 +82,7 @@ class puddinq_scooter_install {
      *          UNINSTALL
      **********************************************/
 
-        public static function puddinq_scooter_shop_uninstall() {
+        public static function puddinq_shop_info_uninstall() {
 
             global $wpdb;
             $table = $wpdb->prefix."psi";
