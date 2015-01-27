@@ -10,9 +10,9 @@
  */
 
 
-    
+class puddinq_views {    
 
-    function public_puddinq_scooter_shop_view() {
+    public static function public_puddinq_shop_info_view() {
         // make database connection available for function
         global $wpdb;
         // get all rows from database
@@ -37,7 +37,7 @@
         echo '</table>';    
     }
     
-    function puddinq_scooter_shop_view_all() {
+    public static function puddinq_shop_info_view_all() {
         // make database connection available for function
         global $wpdb;
         // get all rows from database
@@ -58,8 +58,8 @@
             echo '<td>' . $contact->lname . '</td>';
             echo '<td>' . $contact->text . '</td>';
             echo "<td><a href='" . $contact->url . "'>weblink</a></td>";
-            echo "<td><a href='" . admin_url('admin.php?page=puddinq_scooter_shop_bewerk&id='.$contact->id) . "'>Update</a></td>";
-            echo "<td><form action='" . admin_url('admin.php?page=puddinq_scooter_shop_bewerk&id='.$contact->id) . "' method='post' >";
+            echo "<td><a href='" . admin_url('admin.php?page=puddinq_shop_info_bewerk&id='.$contact->id) . "'>Update</a></td>";
+            echo "<td><form action='" . admin_url('admin.php?page=puddinq_shop_info_bewerk&id='.$contact->id) . "' method='post' >";
             ?>
             <input class='button' type='submit' value='verwijder' name='delete'
             onclick="return confirm('&iquest;Weet je zeker dat je <?php echo $contact->lname; ?> wilt verwijderen ?')">
@@ -70,7 +70,7 @@
         echo '</table>';    
     }
 
-    function psi_cheating() {
+    public static function psi_cheating() {
 
             // die if not manager
         if ( !current_user_can( 'manage_options' ) )  {
@@ -79,8 +79,9 @@
 
     }
 
-    function psi_logged_in() {
+    public static function psi_logged_in() {
         if ( !is_user_logged_in() ) {
             wp_die('je moet ingelogd zijn om deze gegevens te bekijken');
         }
     }
+}

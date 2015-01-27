@@ -5,7 +5,7 @@
  * 
  */
 class psi_edit {
-public static function puddinq_scooter_shop_bewerk () {
+public static function puddinq_shop_info_edit () {
     
     // die if not manager
     psi_cheating();
@@ -61,7 +61,7 @@ else{//selecting value to update
 	}
 }
 ?>
-<link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/puddinq-admin-info/admin-style.css" rel="stylesheet" />
+<link type="text/css" href="<?php echo PSIDIR; ?>/css/admin-style.css" rel="stylesheet" />
 
 <div class="wrap psi">
     <h2>Contact:</h2>

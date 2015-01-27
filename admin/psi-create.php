@@ -6,10 +6,10 @@
  * 
  */
 class psi_make {
-public static function puddinq_scooter_shop_nieuw () {
+public static function puddinq_shop_info_create () {
     
     // die if not manager
-    psi_cheating();
+    puddinq_views::psi_cheating();
     
     global $wpdb;    
     $table  = $wpdb->prefix . "psi";
@@ -32,7 +32,7 @@ public static function puddinq_scooter_shop_nieuw () {
                 );
         $id = $wpdb->insert_id;
         $message  = $fname . " " . $lname . " is toegevoegd ";
-        $message .= "<a href='" . admin_url('admin.php?page=puddinq_scooter_shop_bewerk&id='.$id) . "'>bewerk " . $fname . "</a>";
+        $message .= "<a href='" . admin_url('admin.php?page=puddinq_scooter_shop_edit&id='.$id) . "'>bewerk " . $fname . "</a>";
     }
 
 ?>

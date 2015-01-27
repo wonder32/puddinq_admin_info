@@ -23,8 +23,8 @@ class psi_shortcode {
      */
     
     static function psi_public() {
-        psi_logged_in();
-        public_puddinq_scooter_shop_view();
+        puddinq_views::psi_logged_in();
+        puddinq_views::public_puddinq_shop_info_view();
         
     }
     
@@ -33,7 +33,7 @@ class psi_shortcode {
      */
     
     static function register_psi_stylesheet() {    
-        wp_register_style( 'public_puddinq_scooter_shop_style', dirname(plugin_dir_url( __FILE__ )) . '/css/public-style.css', false, '0.0.1' );
+        wp_register_style( 'public_puddinq_shop_info_style', dirname(plugin_dir_url( __FILE__ )) . '/css/public-style.css', false, '0.0.1' );
 
     }
     
@@ -46,8 +46,8 @@ class psi_shortcode {
         $posts = $wp_query->posts;
         $pattern = get_shortcode_regex();
         foreach ($posts as $post) {
-            if ( preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches ) && array_key_exists( 2, $matches ) && in_array( 'puddinq_scooter_shop', $matches[2] ) ) {
-            wp_enqueue_style('public_puddinq_scooter_shop_style');
+            if ( preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches ) && array_key_exists( 2, $matches ) && in_array( 'puddinq_shop_info', $matches[2] ) ) {
+            wp_enqueue_style('public_puddinq_shop_info_style');
             }
         }
     }

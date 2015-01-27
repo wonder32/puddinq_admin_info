@@ -5,10 +5,10 @@
  * 
  */
 class psi_page {
-    public static function puddinq_scooter_shop_options () {
+    public static function puddinq_shop_info_options () {
 
     // die if not manager
-    psi_cheating();
+    puddinq_views::psi_cheating();
     
     // global settings form
 ?>
@@ -51,9 +51,9 @@ printf( __( 'Welcome to WordPress&nbsp;%s' ), $page_title );
 <?php
     // 
 ?>
-    <a class="button" href="<?php echo admin_url('admin.php?page=puddinq_scooter_shop_nieuw'); ?>">Nieuw contact aanmaken</a>
+    <a class="button" href="<?php echo admin_url('admin.php?page=puddinq_shop_info_nieuw'); ?>">Nieuw contact aanmaken</a>
  
-    <?php puddinq_scooter_shop_view_all()?>
+    <?php puddinq_views::puddinq_shop_info_view_all()?>
 </div>
 <?php
 }

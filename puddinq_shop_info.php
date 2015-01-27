@@ -19,8 +19,8 @@ Author URI: https://puddinq.mobi/
         require_once(PSIDIR . 'admin/psi-functions.php');
         require_once(PSIDIR . 'admin/psi-page.php');
         require_once(PSIDIR . 'admin/psi-install.php');
-        require_once(PSIDIR . 'admin/psi-bewerk.php');
-        require_once(PSIDIR . 'admin/psi-maak.php');
+        require_once(PSIDIR . 'admin/psi-edit.php');
+        require_once(PSIDIR . 'admin/psi-create.php');
         require_once(PSIDIR . 'public/public.php');
         
 
@@ -50,7 +50,7 @@ class psi_base {
             'PSI Admin',                //Menu titel
             'manage_options',           //Toegang
             'shop_info',               // menu slug
-            array('psi_page', 'puddinq_scooter_shop_options'), //function
+            array('psi_page', 'puddinq_shop_info_options'), //function
             'dashicons-editor-italic',  //icon
             '14'                        //positie;
             );
@@ -60,11 +60,11 @@ class psi_base {
             // Add sub page new contact
             add_submenu_page(
             'shop_info',               //onderdeel van bovenstaand admin info
-            'Nieuw shop', 
-            'Nieuw shop', 
+            'Nieuwe shop', 
+            'Nieuwe shop', 
             'manage_options',           //toegang
-            'puddinq_shop_info_nieuw', //slug 
-            array('psi_make', 'puddinq_scooter_shop_nieuw')  //functiom
+            'puddinq_shop_info_new', //slug 
+            array('psi_make', 'puddinq_shop_info_create')  //functiom
             );
     }
     
@@ -75,8 +75,8 @@ class psi_base {
             'Bewerk shop', 
             'Bewerk shop', 
             'manage_options',           //toegang
-            'puddinq_shop_info_bewerk',//slug 
-            array('psi_edit', 'puddinq_scooter_shop_bewerk') //function
+            'puddinq_shop_info_edit',//slug 
+            array('psi_edit', 'puddinq_shop_info_edit') //function
             );
     }
 

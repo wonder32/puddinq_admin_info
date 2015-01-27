@@ -15,7 +15,7 @@ class puddinq_shop_install {
     
 
     public static function puddinq_shop_info_install(){
-        psi_cheating();
+        puddinq_views::psi_cheating();
             global $wpdb;
             global $psi_db_version; 
 
