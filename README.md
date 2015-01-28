@@ -50,6 +50,7 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 * wordpress 4.0
 
 ### changelog
-* 0.3 28-01-2015 OOP general shop info CRUD tested
+* 0.4 28-01-2015 OOP general shop info CRUD tested
+* 0.3 28-01-2015 Object orientated setup
 * 0.2 26-01-2015 rebuild as shop tables and output
 * 0.1 22-12-2014 init/ initial commit 'Base install / view / uninstall'
