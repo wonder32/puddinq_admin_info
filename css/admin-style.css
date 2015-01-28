@@ -76,6 +76,19 @@
         vertical-align: middle;
 }
 
+.puddinq_psi tr td:first-child {
+        width: 100px;
+}
+
+.puddinq_psi tr td:nth-child(2) {
+        width: 450px;
+}
+
+.puddinq_psi tr td:nth-child(4) input,
+.puddinq_psi tr td:last-child input {
+        width: 70px;
+}
+
 .puddinq_psi tr:first-child td a{
         padding: 5px 5px 5px 5px;
         color:#000;
@@ -161,4 +174,12 @@ input:required:invalid, input:focus:invalid {
     height: 100px;
     vertical-align: top;
     overflow: auto;
+}
+
+.help {
+    display:none;
+    font-size:90%;
+}
+input:focus + .help {
+    display:inline-block;
 }

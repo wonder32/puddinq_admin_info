@@ -51,7 +51,7 @@ class psi_page {
             <?php
                 // 
             ?>
-                <a class="button" href="<?php echo admin_url('admin.php?page=puddinq_shop_info_create'); ?>">Shop Toevoegen</a>
+                <a class="button" href="<?php echo admin_url('admin.php?page=puddinq_shop_info_new'); ?>">Shop Toevoegen</a>
 
                 <?php puddinq_views::puddinq_shop_info_view_all()?>
             </div>

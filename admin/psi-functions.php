@@ -42,6 +42,7 @@ class puddinq_views {
                     echo "\t\t\t\t<tr><td>Mail:</td><td>" . $shop->email . "</td><td>Vrijdag</td><td>" . $shop->fro . "</td><td>" . $shop->frc . "</td></tr>\n";
                     echo "\t\t\t\t<tr><td>Pagina:</td><td><a href='" . $shop->url . "'>" . $shop->url . "</a></td><td>Zaterdag</td><td>" . $shop->sao . "</td><td>" . $shop->sac . "</td></tr>\n";
                     echo "\t\t\t\t<tr><td>Beschrijving</td><td>" . $shop->text . "</td>\n\t\t\t\t<td>Zondag</td><td>" . $shop->suo . "</td><td>" . $shop->suc . "</td></tr>\n";
+                    echo "\t\t\t\t<tr><td>Laatste wijziging</td><td colspan='4'>" . $shop->time . "</td></tr>\n";
                     echo "\t\t\t\t</table>";
                     echo "\t\t\t\t<br />\n";
                     echo "\t\t\t\t<hr />\n";
@@ -67,7 +68,7 @@ class puddinq_views {
                     echo "<table class='puddinq_psi'>";
                     echo "<tr><td colspan='1'>$shop->name</td><td colspan='2'>Openingstijden</td>";
                     echo "<td><a href='" . admin_url('admin.php?page=puddinq_shop_info_edit&id='.$shop->id) . "'>Update</a></td>";
-                    echo "<td><form action='" . admin_url('admin.php?page=puddinq_shop_info_bewerk&id='.$shop->id) . "' method='post' >";
+                    echo "<td><form action='" . admin_url('admin.php?page=puddinq_shop_info_edit&id='.$shop->id) . "' method='post' >";
                     ?>
                     <input class='button' type='submit' value='verwijder' name='delete'
                     onclick="return confirm('&iquest;Weet je zeker dat je <?php echo $shop->name; ?> wilt verwijderen ?')">
@@ -80,12 +81,14 @@ class puddinq_views {
                     echo "<tr><td>Mail:</td><td>" . $shop->email . "</td><td>Vrijdag</td><td>" . $shop->fro . "</td><td>" . $shop->frc . "</td></tr>";
                     echo "<tr><td>Pagina:</td><td><a href='" . $shop->url . "'>" . $shop->url . "</a></td><td>Zaterdag</td><td>" . $shop->sao . "</td><td>" . $shop->sac . "</td></tr>";
                     echo "<tr><td>Beschrijving</td><td>" . $shop->text . "</td><td>Zondag</td><td>" . $shop->suo . "</td><td>" . $shop->suc . "</td></tr>";
+                    echo "\t\t\t\t<tr><td>Laatste wijziging</td><td colspan='4'>" . $shop->time . "</td></tr>\n";
                     echo "</table>";
                     echo "<br />";
                     echo "<hr />";
                     echo "<br />";
-                }
-                echo '</table>';    
+                    echo '</table>';
+                 }
+    
     }
 
     public static function psi_cheating() {

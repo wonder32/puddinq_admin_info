@@ -94,7 +94,7 @@ class psi_base {
     }
     
     public function psi_load_shop_info_script() {
-        wp_register_script('puddinq_shop_info_script',plugin_dir_url( __FILE__ ) . 'js/puddinq-scooter-info.js');
+        wp_register_script('puddinq_shop_info_script',plugin_dir_url( __FILE__ ) . 'js/puddinq-shop-info.js');
         wp_enqueue_script('puddinq_shop_info_script');
     }
 }
