@@ -37,7 +37,7 @@ class puddinq_views {
                     echo "\t\t\t\t<tr><td colspan='2'>$shop->name</td><td colspan='3'>Openingstijden</td></tr>\n";
                     echo "\t\t\t\t<tr><td>Naam:</td><td>" . $shop->name . "</td><td>Maandag</td><td>" . $shop->moo . "</td><td>" . $shop->moc . "</td></tr>\n";
                     echo "\t\t\t\t<tr><td>Adres:</td><td>" . $shop->address . "</td><td>Dinsdag</td><td>" . $shop->tuo . "</td><td>" . $shop->tuc . "</td></tr>\n";
-                    echo "\t\t\t\t<tr><td>Postcode:</td><td>" . $shop->postcode . ", " . $shop->city . "</td><td>Woensdag</td><td>" . $shop->weo . "</td><td>" . $shop->wec . "</td></tr>\n";
+                    echo "\t\t\t\t<tr><td>Postcode:</td><td>" . $shop->postcode . "</td><td>Woensdag</td><td>" . $shop->weo . "</td><td>" . $shop->wec . "</td></tr>\n";
                     echo "\t\t\t\t<tr><td>Telefoon:</td><td>" . $shop->telephone . "</td><td>Donderdag</td><td>" . $shop->tho . "</td><td>" . $shop->thc . "</td></tr>\n";
                     echo "\t\t\t\t<tr><td>Mail:</td><td>" . $shop->email . "</td><td>Vrijdag</td><td>" . $shop->fro . "</td><td>" . $shop->frc . "</td></tr>\n";
                     echo "\t\t\t\t<tr><td>Pagina:</td><td><a href='" . $shop->url . "'>" . $shop->url . "</a></td><td>Zaterdag</td><td>" . $shop->sao . "</td><td>" . $shop->sac . "</td></tr>\n";
@@ -77,7 +77,7 @@ class puddinq_views {
                     echo "</form></td></tr>";
                     echo "<tr><td>Naam:</td><td>" . $shop->name . "</td><td>Maandag</td><td>" . $shop->moo . "</td><td>" . $shop->moc . "</td></tr>";
                     echo "<tr><td>Adres:</td><td>" . $shop->address . "</td><td>Dinsdag</td><td>" . $shop->tuo . "</td><td>" . $shop->tuc . "</td></tr>";
-                    echo "<tr><td>Postcode:</td><td>" . $shop->postcode . ", " . $shop->city . "</td><td>Woensdag</td><td>" . $shop->weo . "</td><td>" . $shop->wec . "</td></tr>";
+                    echo "<tr><td>Postcode:</td><td>" . $shop->postcode . "</td><td>Woensdag</td><td>" . $shop->weo . "</td><td>" . $shop->wec . "</td></tr>";
                     echo "<tr><td>Telefoon:</td><td>" . $shop->telephone . "</td><td>Donderdag</td><td>" . $shop->tho . "</td><td>" . $shop->thc . "</td></tr>";
                     echo "<tr><td>Mail:</td><td>" . $shop->email . "</td><td>Vrijdag</td><td>" . $shop->fro . "</td><td>" . $shop->frc . "</td></tr>";
                     echo "<tr><td>Pagina:</td><td><a href='" . $shop->url . "'>" . $shop->url . "</a></td><td>Zaterdag</td><td>" . $shop->sao . "</td><td>" . $shop->sac . "</td></tr>";

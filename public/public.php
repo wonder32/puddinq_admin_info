@@ -23,8 +23,11 @@ class psi_shortcode {
     
     static function psi_public() {
         //puddinq_views::psi_logged_in();
-        puddinq_views::public_puddinq_shop_info_view();
-        
+         ob_start();
+         puddinq_views::public_puddinq_shop_info_view();
+         $output_string=ob_get_contents();;
+         ob_end_clean();
+         return $output_string;
     }
     
     /***
