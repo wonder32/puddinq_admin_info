@@ -108,42 +108,43 @@ public static function puddinq_shop_info_edit () {
                         <td colspan='3'>Openingstijden</td>
                     </tr>
                     <tr>
-                        <td>Naam:</td><td><input type="text" name="name" placeholder="Naam" value="<?php echo $s->name; ?>" required aria-describedby="name-format" pattern="[A-Za-z-0-9\s]+"/>
+                        <td>Naam:</td><td><input type="text" name="name" placeholder="Naam" value="<?php echo $s->name; ?>" required aria-describedby="name-format" pattern="[A-Za-z-0-9\s\.\,]+"/>
                             <span id="name-format" class="help">Vb: Scooter Shop</span></td>
-                        <td>Maandag</td><td><input type="text" name="moo" placeholder="12:00" value="<?php echo $s->moo; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
-                        <td><input type="text" name="moc" placeholder="18:00" value="<?php echo $s->moc; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td>Maandag</td><td><input type="text" name="moo" placeholder="12:00" value="<?php echo $s->moo; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td><input type="text" name="moc" placeholder="18:00" value="<?php echo $s->moc; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
                     </tr>
                     <tr>
-                        <td>Adres:</td><td><input type="text" name="address" placeholder="Adres" value="<?php echo $s->address; ?>" required pattern="[A-Za-z-0-9\s]+"/></td>
-                        <td>Dinsdag</td><td><input type="text" name="tuo" placeholder="12:00" value="<?php echo $s->tuo; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
-                        <td><input type="text" name="tuc" placeholder="18:00" value="<?php echo $s->tuc; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td>Adres:</td><td><input type="text" name="address" placeholder="Adres" value="<?php echo $s->address; ?>" required pattern="[A-Za-z-0-9\s\,\.]+"/></td>
+                        <td>Dinsdag</td><td><input type="text" name="tuo" placeholder="12:00" value="<?php echo $s->tuo; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td><input type="text" name="tuc" placeholder="18:00" value="<?php echo $s->tuc; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
                     </tr>
                     <tr>
                         <td>Postcode:</td><td><input type="text" name="postcode" placeholder="2000 AA" value="<?php echo $s->postcode; ?>" required required aria-describedby="postcode-format" pattern="[0-9]{4}\s[A-Z]{2}"/>
-                            <span id="name-format" class="help">Vb: 2000 AA</span></td>
-                        <td>Woensdag</td><td><input type="text" name="weo" placeholder="12:00" value="<?php echo $s->weo; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
-                        <td><input type="text" name="wec" placeholder="18:00" value="<?php echo $s->wec; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+            <input type="text" name="city" placeholder="Amsterdam" value="<?php echo $s->city; ?>" required />
+                            <span id="name-format" class="help">Vb: 2000 AA Amsterdam</span></td>
+                        <td>Woensdag</td><td><input type="text" name="weo" placeholder="12:00" value="<?php echo $s->weo; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td><input type="text" name="wec" placeholder="18:00" value="<?php echo $s->wec; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
                     </tr>
                     <tr>
                         <td>Telefoon:</td><td><input type="text" name="telephone" placeholder="0680000000" value="<?php echo $s->telephone; ?>" required /></td>
-                        <td>Donderdag</td><td><input type="text" name="tho" placeholder="12:00" value="<?php echo $s->tho; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
-                        <td><input type="text" name="thc" placeholder="18:00" value="<?php echo $s->thc; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td>Donderdag</td><td><input type="text" name="tho" placeholder="12:00" value="<?php echo $s->tho; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td><input type="text" name="thc" placeholder="18:00" value="<?php echo $s->thc; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
                     </tr>
                     <tr>
                         <td>Mail:</td><td><input type="email" name="email" placeholder="john@test.nl" value="<?php echo $s->email; ?>" required /></td>
-                        <td>Vrijdag</td><td><input type="text" name="fro" placeholder="12:00" value="<?php echo $s->fro; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
-                        <td><input type="text" name="frc" placeholder="18:00" value="<?php echo $s->frc; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td>Vrijdag</td><td><input type="text" name="fro" placeholder="12:00" value="<?php echo $s->fro; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td><input type="text" name="frc" placeholder="18:00" value="<?php echo $s->frc; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
                     </tr>
                     <tr>
                         <td>Pagina:</td><td><input type="url" name="url" placeholder="http://www.Weblink.nl" value="<?php echo $s->url; ?>" required aria-describedby="url-format" />
                             <span id="name-format" class="help">Vb: http://www.perry.nl</span></td>
-                        <td>Zaterdag</td><td><input type="text" name="sao" placeholder="12:00" value="<?php echo $s->sao; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
-                        <td><input type="text" name="sac" placeholder="18:00" value="<?php echo $s->sac; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td>Zaterdag</td><td><input type="text" name="sao" placeholder="12:00" value="<?php echo $s->sao; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td><input type="text" name="sac" placeholder="18:00" value="<?php echo $s->sac; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
                     </tr>
                     <tr>
                         <td>Beschrijving:</td><td><textarea name="psi_text" placeholder="Wat is ut"><?php echo $s->text; ?></textarea></td>
-                        <td>Zondag</td><td><input type="text" name="suo" placeholder="gesloten" value="<?php echo $s->suo; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
-                        <td><input type="text" name="suc" placeholder="gesloten" value="<?php echo $s->suc; ?>" required pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td>Zondag</td><td><input type="text" name="suo" placeholder="gesloten" value="<?php echo $s->suo; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                        <td><input type="text" name="suc" placeholder="gesloten" value="<?php echo $s->suc; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
                     </tr>
                     </table>
                     <input type='submit' name="updated" value='Opslaan' class='button'>

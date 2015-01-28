@@ -22,19 +22,13 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 ### Public shop view
 * Logged in users only (not!)
 * See firstname, lastname, text and weblink
-* add \[puddinq_admin_info\] as shortcode in posts / pages
+* add \[puddinq_shop_info\] as shortcode in posts / pages
 =======
 * View list of scooter shops
 * Create a scootershop
 * Read (list shops)
 * Update a shop
 * Delete a shop
-
-### Public shop view
-* Logged in users only
-* See Name, info, description and openinghours
-* add \[puddinq_scooters\] as shortcode in posts / pages
->>>>>>> scooter
 
 ### Plugin setup:
 * Install database
