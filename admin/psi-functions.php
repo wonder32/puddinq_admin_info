@@ -1,7 +1,7 @@
 <?php
 /**
- * Puddinq Admin Info Functions
- * version 0.2
+ * Puddinq Shop Info - Views
+ * version 0.3
  * 
  */
 
@@ -48,6 +48,7 @@ class puddinq_views {
                     echo "\t\t\t\t<hr />\n";
                     echo "\t\t\t\t<br />\n";
                 }
+                echo "\t\t\t\tShop info system made by <a href='https://www.puddinq.mobi/wip/profiel/' target='_blank' alt='profiel wonder32'>wonder32</a>\n";
   
     }
     

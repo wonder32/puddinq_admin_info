@@ -1,7 +1,7 @@
 <?php
 /**
- *  Puddinq Admin Info update field
- *  version 0.2
+ *  Puddinq Shop Info - update
+ *  version 0.3
  * 
  */
 class psi_edit {

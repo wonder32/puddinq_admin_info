@@ -1,4 +1,4 @@
-# [puddinq scooter](http://puddinq.mobi)
+# [puddinq shop info](http://puddinq.mobi)
 
 [![Puddinq](https://www.puddinq.mobi/wp-content/themes/puddinq/img/logo.gif)](http://www.puddinq.mobi)
 [![puddinq](https://www.puddinq.mobi/wip/logo_puddinq.gif)](https://www.puddinq.mobi)
@@ -13,11 +13,11 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 ## Features
 
 ### Scooter Shop view
- View list of scooter shops
- Create a scooter shop
+ View list of shops
+ Create a shop
  Read (list shops)
- Update a scooter shop
- Delete a scooter shop
+ Update a shop
+ Delete a shop
 
 ### Public shop view
 * Logged in users only (not!)
@@ -50,6 +50,6 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
 * wordpress 4.0
 
 ### changelog
-* 0.3 27-01-2015 OOP rebuild as shop tables and output
+* 0.3 28-01-2015 OOP general shop info CRUD tested
 * 0.2 26-01-2015 rebuild as shop tables and output
 * 0.1 22-12-2014 init/ initial commit 'Base install / view / uninstall'

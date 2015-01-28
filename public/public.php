@@ -1,10 +1,9 @@
 <?php /**
- * Puddinq Admin Info Make
- * version 0.2
+ * Puddinq Shop Info Public
+ * version 0.3
  * 
  */
 
-//[foobar]
 
 class psi_shortcode {
 
@@ -23,7 +22,7 @@ class psi_shortcode {
      */
     
     static function psi_public() {
-        puddinq_views::psi_logged_in();
+        //puddinq_views::psi_logged_in();
         puddinq_views::public_puddinq_shop_info_view();
         
     }

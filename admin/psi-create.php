@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Puddinq Admin Info Make
- * version 0.2
+ * Puddinq Shop Info - create
+ * version 0.3
  * 
  */
 class psi_make {

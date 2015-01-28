@@ -1,7 +1,7 @@
 <?php
 /**
- * @package Puddinq Admin Info Install
- * @version 0.1
+ * @package Puddinq Shop Info Install
+ * @version 0.3
  */
 
     /**********************************************

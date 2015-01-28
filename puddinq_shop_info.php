@@ -1,7 +1,7 @@
 <?php
 /**
- *  Puddinq Scooter Shop
- *  version 0.2
+ *  Puddinq Shop Info
+ *  version 0.3
  * 
  */
 /*
@@ -9,7 +9,7 @@ Plugin Name: Puddinq Shop Info
 Plugin URI: http://wordpress.org/plugins/puddinq-shop-info/
 Description: This plugin provides an extra page in the admin area with the ability to manage shop info for multiple shops
 Author: wonder32
-Version: 0.2
+Version: 0.3
 Author URI: https://puddinq.mobi/
 */
     /**********************************************

@@ -1,6 +1,6 @@
 <?php
 /**
- *  Puddinq Admin Info Page
+ *  Puddinq Shop Info - Admin Page
  *  version 0.2
  * 
  */
