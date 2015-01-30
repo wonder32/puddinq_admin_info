@@ -124,11 +124,11 @@
 *
 ********************************/
 
-th, td {
+.psi th, td {
     vertical-align: text-top;
 }
 
-.widefat {
+.psi .widefat {
     min-width: 400px;
     max-width: 800px;
     width: 90%;
@@ -154,7 +154,7 @@ th, td {
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-input:required:invalid, input:focus:invalid {
+.psi input:required:invalid, input:focus:invalid {
   /* insert your own styles for invalid form input */
     -moz-box-shadow: none;
     background: #1F2124;
@@ -186,6 +186,6 @@ input:required:invalid, input:focus:invalid {
     display:none;
     font-size:90%;
 }
-input:focus + .help {
+.psi input:focus + .help {
     display:inline-block;
 }

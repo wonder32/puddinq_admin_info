@@ -89,7 +89,7 @@ class psi_base {
 
     
     public function psi_load_shop_info_style() {
-        wp_register_style( 'puddinq_shop_info_style', plugin_dir_url( __FILE__ ) . 'css/admin-style.css', false, '0.0.1' );
+        wp_register_style( 'puddinq_shop_info_style', plugin_dir_url( __FILE__ ) . 'css/admin-style.css', false, '0.0.3' );
         wp_enqueue_style( 'puddinq_shop_info_style' );
     }
     

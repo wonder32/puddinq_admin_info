@@ -14,62 +14,42 @@ public static function puddinq_shop_info_create () {
     global $wpdb;    
     $table  = $wpdb->prefix . "psi";
     $time   = current_time( 'mysql' );
-    (isset($_POST["name"]))? $psi_name = $_POST["name"]: $psi_name = '';
-    (isset($_POST["address"]))? $psi_address = $_POST["address"]: $psi_address = '';
-    (isset($_POST["postcode"]))? $psi_postcode = $_POST["postcode"]: $psi_postcode = '';
-    (isset($_POST["city"]))? $psi_city = $_POST["city"]: $psi_city = '';
-    (isset($_POST["telephone"]))? $psi_telephone = $_POST["telephone"]: $psi_telephone = '';
-    (isset($_POST["url"]))? $psi_url = $_POST["url"]: $psi_url = '';
-    (isset($_POST["email"]))? $psi_email = $_POST["email"]: $psi_email = '';
-    (isset($_POST["text"]))? $psi_text = $_POST["text"]: $psi_text = '';
-    (isset($_POST["moo"]))? $psi_moo = $_POST["moo"]: $psi_moo = '';
-    (isset($_POST["moc"]))? $psi_moc = $_POST["moc"]: $psi_moc = '';
-    (isset($_POST["tuo"]))? $psi_tuo = $_POST["tuo"]: $psi_tuo = '';
-    (isset($_POST["tuc"]))? $psi_tuc = $_POST["tuc"]: $psi_tuc = '';
-    (isset($_POST["weo"]))? $psi_weo = $_POST["weo"]: $psi_weo = '';
-    (isset($_POST["wec"]))? $psi_wec = $_POST["wec"]: $psi_wec = '';
-    (isset($_POST["tho"]))? $psi_tho = $_POST["tho"]: $psi_tho = '';
-    (isset($_POST["thc"]))? $psi_thc = $_POST["thc"]: $psi_thc = '';
-    (isset($_POST["fro"]))? $psi_fro = $_POST["fro"]: $psi_fro = '';
-    (isset($_POST["frc"]))? $psi_frc = $_POST["frc"]: $psi_frc = '';
-    (isset($_POST["sao"]))? $psi_sao = $_POST["sao"]: $psi_sao = '';
-    (isset($_POST["sac"]))? $psi_sac = $_POST["sac"]: $psi_sac = '';
-    (isset($_POST["suo"]))? $psi_suo = $_POST["suo"]: $psi_suo = '';
-    (isset($_POST["suc"]))? $psi_suc = $_POST["suc"]: $psi_suc = '';
-    
- 
+    // extract is a dangerous function, do not remove the EXTR_PREFIX_ALL
+    // and do not use the variables with the prefix anywhere else !!
+    extract($_POST, EXTR_PREFIX_ALL, "psi_unsave");
+   
     if (isset($_POST['insert'])) {
         $wpdb->insert(
                 $table,
                 array(
                       'time' => $time,
-                      'name' => $psi_name,
-                      'address' => $psi_address,
-                      'postcode' => $psi_postcode,
-                      'city' => $psi_city,
-                      'telephone' => $psi_telephone,
-                      'url' => $psi_url,
-                      'email' => $psi_email,
-                      'text' => $psi_text,
-                      'moo' => $psi_moo,
-                      'moc' => $psi_moc,
-                      'tuo' => $psi_tuo,
-                      'tuc' => $psi_tuc,
-                      'weo' => $psi_weo,
-                      'wec' => $psi_wec,
-                      'tho' => $psi_tho,
-                      'thc' => $psi_thc,
-                      'fro' => $psi_fro,
-                      'frc' => $psi_frc,
-                      'sao' => $psi_sao,
-                      'sac' => $psi_sac,
-                      'suo' => $psi_suo,
-                      'suc' => $psi_suc),
+                      'name' => $psi_unsave_name,
+                      'address' => $psi_unsave_address,
+                      'postcode' => $psi_unsave_postcode,
+                      'city' => $psi_unsave_city,
+                      'telephone' => $psi_unsave_telephone,
+                      'url' => $psi_unsave_url,
+                      'email' => $psi_unsave_email,
+                      'text' => $psi_unsave_text,
+                      'moo' => $psi_unsave_moo,
+                      'moc' => $psi_unsave_moc,
+                      'tuo' => $psi_unsave_tuo,
+                      'tuc' => $psi_unsave_tuc,
+                      'weo' => $psi_unsave_weo,
+                      'wec' => $psi_unsave_wec,
+                      'tho' => $psi_unsave_tho,
+                      'thc' => $psi_unsave_thc,
+                      'fro' => $psi_unsave_fro,
+                      'frc' => $psi_unsave_frc,
+                      'sao' => $psi_unsave_sao,
+                      'sac' => $psi_unsave_sac,
+                      'suo' => $psi_unsave_suo,
+                      'suc' => $psi_unsave_suc),
                 array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
                 );
         $id = $wpdb->insert_id;
-        $message  = $psi_name . " " . $psi_address . " is toegevoegd ";
-        $message .= "<a href='" . admin_url('admin.php?page=puddinq_shop_info_edit&id='.$id) . "'>bewerk " . $psi_name . "</a>";
+        $message  = $psi_unsave_name . " " . $psi_unsave_address . " is toegevoegd ";
+        $message .= "<a href='" . admin_url('admin.php?page=puddinq_shop_info_edit&id='.$id) . "'>bewerk " . $psi_unsave_name . "</a>";
     }
 
 ?>
