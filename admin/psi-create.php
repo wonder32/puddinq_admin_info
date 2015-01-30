@@ -44,8 +44,9 @@ public static function puddinq_shop_info_create () {
                       'sao' => $psi_unsave_sao,
                       'sac' => $psi_unsave_sac,
                       'suo' => $psi_unsave_suo,
-                      'suc' => $psi_unsave_suc),
-                array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
+                      'suc' => $psi_unsave_suc,
+                      'type' => $psi_unsave_type),
+                array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
                 );
         $id = $wpdb->insert_id;
         $message  = $psi_unsave_name . " " . $psi_unsave_address . " is toegevoegd ";
@@ -105,9 +106,12 @@ public static function puddinq_shop_info_create () {
             <td><input type="text" name="sac" placeholder="18:00" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
         </tr>
         <tr>
-            <td>Beschrijving:</td><td><textarea name="text" placeholder="Wat is ut"></textarea></td>
+            <td>Winkel soort<td><input type="text" name="type" placeholder="Scooterwinkel" required pattern="[A-Za-z-0-9]+"/></td>
             <td>Zondag</td><td><input type="text" name="suo" placeholder="gesloten" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
             <td><input type="text" name="suc" placeholder="gesloten" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+        </tr>
+        <tr>
+            <td>Beschrijving:</td><td colspan='4'><textarea name="text" placeholder="Wat is ut"></textarea></td>
         </tr>
         </table>
         <input type='submit' name="insert" value='Save' class='button'>

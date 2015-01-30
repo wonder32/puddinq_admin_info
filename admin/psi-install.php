@@ -58,6 +58,7 @@ class puddinq_shop_install {
               sac varchar(9) DEFAULT '' NOT NULL,
               suo varchar(9) DEFAULT '' NOT NULL,
               suc varchar(9) DEFAULT '' NOT NULL,
+              type varchar(20) DEFAULT '' NOT NULL,
               UNIQUE KEY id (id)
             ) $charset_collate;";
 
@@ -93,6 +94,7 @@ class puddinq_shop_install {
               $psi_sac = '17:00';
               $psi_soo = 'gesloten';
               $psi_suc = 'gesloten';
+              $psi_type = 'Scooterwinkel';
 
                 global $wpdb;
                 $table_name = $wpdb->prefix . "psi";
@@ -123,6 +125,7 @@ class puddinq_shop_install {
                               'sac' => $psi_sac,
                               'suo' => $psi_soo,
                               'suc' => $psi_suc,
+                              'type' => $psi_type,
                         ) 
                 );
 

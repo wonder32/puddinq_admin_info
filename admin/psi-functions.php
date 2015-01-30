@@ -41,7 +41,8 @@ class puddinq_views {
                     echo "\t\t\t\t<tr><td>Telefoon:</td><td>" . $shop->telephone . "</td><td>Donderdag</td><td>" . $shop->tho . "</td><td>" . $shop->thc . "</td></tr>\n";
                     echo "\t\t\t\t<tr><td>Mail:</td><td>" . $shop->email . "</td><td>Vrijdag</td><td>" . $shop->fro . "</td><td>" . $shop->frc . "</td></tr>\n";
                     echo "\t\t\t\t<tr><td>Pagina:</td><td><a href='" . $shop->url . "'>" . $shop->url . "</a></td><td>Zaterdag</td><td>" . $shop->sao . "</td><td>" . $shop->sac . "</td></tr>\n";
-                    echo "\t\t\t\t<tr><td>Beschrijving</td><td>" . $shop->text . "</td>\n\t\t\t\t<td>Zondag</td><td>" . $shop->suo . "</td><td>" . $shop->suc . "</td></tr>\n";
+                    echo "\t\t\t\t<tr><td>Winkelsoort:</td><td>" . $shop->type . "</td>\n\t\t\t\t<td>Zondag</td><td>" . $shop->suo . "</td><td>" . $shop->suc . "</td></tr>\n";
+                    echo "\t\t\t\t<tr><td>Beschrijving</td><td colspan='4'>" . $shop->text . "</td></tr>";
                     echo "\t\t\t\t<tr><td>Laatste wijziging</td><td colspan='4'>" . $shop->time . "</td></tr>\n";
                     echo "\t\t\t\t</table>";
                     echo "\t\t\t\t<br />\n";
@@ -81,8 +82,9 @@ class puddinq_views {
                     echo "<tr><td>Telefoon:</td><td>" . $shop->telephone . "</td><td>Donderdag</td><td>" . $shop->tho . "</td><td>" . $shop->thc . "</td></tr>";
                     echo "<tr><td>Mail:</td><td>" . $shop->email . "</td><td>Vrijdag</td><td>" . $shop->fro . "</td><td>" . $shop->frc . "</td></tr>";
                     echo "<tr><td>Pagina:</td><td><a href='" . $shop->url . "'>" . $shop->url . "</a></td><td>Zaterdag</td><td>" . $shop->sao . "</td><td>" . $shop->sac . "</td></tr>";
-                    echo "<tr><td>Beschrijving</td><td>" . $shop->text . "</td><td>Zondag</td><td>" . $shop->suo . "</td><td>" . $shop->suc . "</td></tr>";
-                    echo "\t\t\t\t<tr><td>Laatste wijziging</td><td colspan='4'>" . $shop->time . "</td></tr>\n";
+                    echo "<tr><td>Winkelsoort</td><td>" . $shop->type . "</td><td>Zondag</td><td>" . $shop->suo . "</td><td>" . $shop->suc . "</td></tr>";
+                    echo "<tr><td>Beschrijving</td><td colspan='4'>" . $shop->text . "</td></tr>";
+                    echo "<tr><td>Laatste wijziging</td><td colspan='4'>" . $shop->time . "</td></tr>\n";
                     echo "</table>";
                     echo "<br />";
                     echo "<hr />";

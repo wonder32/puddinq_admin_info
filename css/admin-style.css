@@ -142,6 +142,10 @@
     height: 25px;
 }
 
+.psi textarea {
+    width: 700px;
+}
+
  .psi input:required:valid, .psi textarea {
     background: #1F2124;
     background: -moz-linear-gradient(#1F2124, #27292C);

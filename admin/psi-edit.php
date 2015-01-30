@@ -59,11 +59,12 @@ public static function puddinq_shop_info_edit () {
               'sao' => $psi_unsave_sao,
               'sac' => $psi_unsave_sac,
               'suo' => $psi_unsave_suo,
-              'suc' => $psi_unsave_suc
+              'suc' => $psi_unsave_suc,
+              'type' => $psi_unsave_type
 	), 
 	array( 'id' => $id ), 
 	array( 
-                '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'
+                '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'
 	), 
 	array( '%s' ) 
         );
@@ -121,9 +122,12 @@ public static function puddinq_shop_info_edit () {
                         <td><input type="text" name="sac" placeholder="18:00" value="<?php echo $s->sac; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
                     </tr>
                     <tr>
-                        <td>Beschrijving:</td><td><textarea name="text" placeholder="Wat is ut"><?php echo $s->text; ?></textarea></td>
+                        <td>Winkelsoort</td><td><input type="text" name="type" placeholder="Scooterwinkel" value="<?php echo $s->type; ?>" required pattern="[A-Za-z-0-9]+"/></td>
                         <td>Zondag</td><td><input type="text" name="suo" placeholder="gesloten" value="<?php echo $s->suo; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
                         <td><input type="text" name="suc" placeholder="gesloten" value="<?php echo $s->suc; ?>" required pattern="([0-1]{0,1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}|gesloten"/></td>
+                    </tr>
+                    <tr>
+                        <td>Beschrijving:</td><td colspan='4'><textarea name="text" placeholder="Wat is ut"><?php echo $s->text; ?></textarea></td>
                     </tr>
                     </table>
                     <input type='submit' name="updated" value='Opslaan' class='button'>
