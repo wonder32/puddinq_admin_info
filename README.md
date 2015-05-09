@@ -20,8 +20,6 @@ Custom plugin made for [puddinq.mobi](http://puddinq.mobi).
  Delete a shop
 
 ### Public shop view
-* Logged in users only (not!)
-* See firstname, lastname, text and weblink
 * add \[puddinq_shop_info\] as shortcode in posts / pages
 =======
 * View list of scooter shops
