@@ -67,22 +67,22 @@ class psi_base {
             // Add sub page new contact
             add_submenu_page(
             'shop_info',               //onderdeel van bovenstaand admin info
-            'Nieuwe shop', 
-            'Nieuwe shop', 
+            'Nieuwe shop',
+            'Nieuwe shop',
             'manage_options',           //toegang
-            'puddinq_shop_info_new', //slug 
+            'puddinq_shop_info_new', //slug
             array('psi_make', 'puddinq_shop_info_create')  //functiom
             );
     }
     
     public function psi_menu_sub_page_edit() {
-            // Add hidden sub page edit contact   
+            // Add hidden sub page edit contact
         add_submenu_page(
             'null',                     //geen onderdeel -> daardoor verborgen
-            'Bewerk shop', 
-            'Bewerk shop', 
+            'Bewerk shop',
+            'Bewerk shop',
             'manage_options',           //toegang
-            'puddinq_shop_info_edit',//slug 
+            'puddinq_shop_info_edit',//slug
             array('psi_edit', 'puddinq_shop_info_edit') //function
             );
     }
